@@ -22,7 +22,6 @@ function App() {
           <Route path="/create" element={<Create />} />
           <Route path="/alter" element={<Alter />} />
           <Route path="/select" element={<Select />} />
-          {/* <Route path="/change" element={<Change />} /> */}
         </Routes>
       </BrowserRouter>
     </div>
