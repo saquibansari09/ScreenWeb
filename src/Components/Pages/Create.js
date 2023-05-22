@@ -3,77 +3,87 @@ import { BsCurrencyRupee } from "react-icons/bs";
 
 const Create = () => {
   return (
-    <section>
-      <div className=" w-[100%] h-[100vh]">
-        <h1 className="pl-5 bg-sky-500 text-lg text-black">Company Creation</h1>
-        <div className="flex gap-5 pt-3 ">
-          <p className="pl-5 text-base">Company Data Path</p>
-          <p className="text-base">:Y:\Data</p>
+    <section className="">
+      <div className="bg-sky-600 h-[40px] w-[100%]">
+        <h1 className="text-2xl font-bold px-5">Company Creation</h1>
+      </div>
+      <div className="flex ">
+        <p className="text-lg px-5 mt-2">Company Data path</p>
+        <p className="mt-2 font-bold">:Y:\Data</p>
+      </div>
+      <hr />
+
+      <div className="flex lg:flex justify-start px-20 gap-10">
+        <div className="mt-3">
+          <label className="mt-2 text-xl">Company Name:</label>
+          <input className="bg-gray-200 ml-12 appearance-none border-2 border-gray-200 rounded w-[300px] py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-purple-500" />
         </div>
-        <hr className="w-[100%] " />
-        <form>
-          <div className="lg:flex  px-5  mb-4">
-            <p>Company Name:</p>
-            <input className="bg-gray-200 ml-8 appearance-none border-2 border-gray-200 rounded w-[300px] py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-purple-500" />
-            <p className="ml-10">
-              Financial year Beginning from <br /> Books beginning from
-            </p>
-            <p className="ml-10">
-              :April-23 <br />
-              :April-23
-            </p>
-          </div>
-          <div className="lg:flex  px-5">
-            <p>Mailing Name:</p>
-            <input className="bg-gray-200 ml-12 appearance-none border-2 border-gray-200 rounded w-[300px] py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-purple-500" />
-          </div>
-          <div className="lg:flex  px-5 mt-4">
-            <p>Address:</p>
-            <input className="bg-gray-200 ml-24 appearance-none border-2 border-gray-200 rounded w-[300px] py-2 px-4 text-gray-700  focus:bg-yellow-400 focus:outline-none  focus:border-purple-500" />
-          </div>
-          <div className="lg:flex  px-5 mt-3">
-            <p>State:</p>
-            <p className="pl-32 font-bold">Not Applicable</p>
-          </div>
-          <div className="lg:flex  px-5 mt-3">
-            <p>Country</p>
-            <p className="pl-28 font-bold">India</p>
-          </div>
-          <div className="lg:flex  px-5 mt-4">
-            <p>Pincode</p>
-            <input className="bg-gray-200 ml-24 appearance-none border-2 border-gray-200 rounded w-[300px] py-2 px-4 text-gray-700  focus:bg-yellow-400 focus:outline-none  focus:border-purple-500" />
-          </div>
-          <div className="lg:flex  px-5 mt-4">
-            <p>Telephone</p>
-            <input className="bg-gray-200 ml-20 appearance-none border-2 border-gray-200 rounded w-[300px] py-2 px-4 text-gray-700  focus:bg-yellow-400 focus:outline-none  focus:border-purple-500" />
-          </div>
-          <div className="lg:flex  px-5 mt-4">
-            <p>Mobile</p>
-            <input className="bg-gray-200 ml-28 appearance-none border-2 border-gray-200 rounded w-[300px] py-2 px-4 text-gray-700  focus:bg-yellow-400 focus:outline-none  focus:border-purple-500" />
-          </div>
-          <div className="lg:flex  px-5 mt-4">
-            <p>Fax</p>
-            <input className="bg-gray-200 ml-32 appearance-none border-2 border-gray-200 rounded w-[300px] py-2 px-4 text-gray-700  focus:bg-yellow-400 focus:outline-none  focus:border-purple-500" />
-          </div>
-          <div className="lg:flex px-5 mt-4">
-            <p>E-mail</p>
-            <input className="bg-gray-200 ml-24 appearance-none border-2 border-gray-200 rounded w-[300px] py-2 px-4 text-gray-700  focus:bg-yellow-400 focus:outline-none  focus:border-purple-500" />
-          </div>
-          <div className="lg:flex  px-5 mt-4 pb-10">
-            <p>Website</p>
-            <input className="bg-gray-200 ml-20 appearance-none border-2 border-gray-200 rounded w-[300px] py-2 px-4 text-gray-700  focus:bg-yellow-400 focus:outline-none  focus:border-purple-500" />
-          </div>
-        </form>
-        <div className="flex gap-5 px-5 ">
-          <h1 className="text-base">
-            Base Currency Symbol <br />
-            Formal name
-          </h1>
-          <span>
-            <BsCurrencyRupee className="text-lg mt-3" />
-            <p>INR</p>
-          </span>
+        <div>
+          <p>
+            Financial year beginning from
+            <br /> Books beginning from
+          </p>
         </div>
+        <div className="text-sm font-bold">
+          <p>:1-Apr-23</p>
+          <p>:1-Apr-23</p>
+        </div>
+      </div>
+      <div className="px-20 mt-3">
+        <label className="mt-2 text-xl">Mailing Name:</label>
+        <input className="bg-gray-200 ml-16 appearance-none border-2 border-gray-200 rounded w-[300px] py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-purple-500" />
+      </div>
+      <div className="px-20 mt-3">
+        <label className="mt-2 text-xl">Address:</label>
+        <input className="bg-gray-200 ml-28 appearance-none border-2 border-gray-200 rounded w-[300px] py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-purple-500" />
+      </div>
+      <div className=" flex px-20 mt-3">
+        <label className=" text-xl">State:</label>
+        <div className="ml-36 mt-2">
+          <p className="font-bold">Not Applicable</p>
+        </div>
+      </div>
+      <div className=" flex px-20 ">
+        <label className="text-xl">Country:</label>
+        <div className="ml-36 mt-2">
+          <p className="font-bold">India</p>
+        </div>
+      </div>
+      <div className="px-20 mt-3">
+        <label className="mt-2 text-xl">Pincode:</label>
+        <input className="bg-gray-200 ml-28 appearance-none border-2 border-gray-200 rounded w-[300px] py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-purple-500" />
+      </div>
+      <div className="px-20 mt-3">
+        <label className="mt-2 text-xl">Telephone:</label>
+        <input className="bg-gray-200 ml-24 appearance-none border-2 border-gray-200 rounded w-[300px] py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-purple-500" />
+      </div>
+      <div className="px-20 mt-3">
+        <label className="mt-2 text-xl">Mobile:</label>
+        <input className="bg-gray-200 ml-32 appearance-none border-2 border-gray-200 rounded w-[300px] py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-purple-500" />
+      </div>
+      <div className="px-20 mt-3">
+        <label className="mt-2 text-xl">Fax:</label>
+        <input className="bg-gray-200 ml-40 appearance-none border-2 border-gray-200 rounded w-[300px] py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-purple-500" />
+      </div>
+      <div className="px-20 mt-3">
+        <label className="mt-2 text-xl">E-mail:</label>
+        <input className="bg-gray-200 ml-32 appearance-none border-2 border-gray-200 rounded w-[300px] py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-purple-500" />
+      </div>
+      <div className="px-20 mt-3">
+        <label className="mt-2 text-xl">Website:</label>
+        <input className="bg-gray-200 ml-28 appearance-none border-2 border-gray-200 rounded w-[300px] py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-purple-500" />
+      </div>
+      <hr className="px-20" />
+      <div className="flex gap-10 px-20 text-xl">
+        <p>Base Curruncy symbole:</p>
+        <span>
+          {" "}
+          <BsCurrencyRupee className="text-2xl" />
+        </span>
+      </div>
+      <div className="flex gap-10 px-20 text-xl">
+        <p className="text-xl">Formal name:</p>
+        <span>INR</span>
       </div>
     </section>
   );

@@ -18,9 +18,9 @@ function CollapsibleExample() {
               Create
             </NavDropdown.Item>
             <NavDropdown.Item href="/alter">Alter</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">ChangeGe</NavDropdown.Item>
+            <NavDropdown.Item href="/change">ChangeGe</NavDropdown.Item>
             <NavDropdown.Item href="/select">Select</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">SHut</NavDropdown.Item>
+            <NavDropdown.Item href="/shut">SHut</NavDropdown.Item>
 
             <NavDropdown.Item href="#action/3.4">
               ONLINE ACCESS
@@ -94,7 +94,8 @@ function CollapsibleExample() {
           </Nav>
           <Button style={{}} className=" " variant="light">
             G:Go To
-          </Button>{" "}
+          </Button>
+
           <Nav.Link
             style={{ margin: "0 30px" }}
             className="text-white "
