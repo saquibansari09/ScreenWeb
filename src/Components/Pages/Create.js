@@ -4,86 +4,43 @@ import { BsCurrencyRupee } from "react-icons/bs";
 const Create = () => {
   return (
     <section className="">
-      <div className="bg-sky-600 h-[40px] w-[100%]">
-        <h1 className="text-2xl font-bold px-5">Company Creation</h1>
-      </div>
-      <div className="flex ">
-        <p className="text-lg px-5 mt-2">Company Data path</p>
-        <p className="mt-2 font-bold">:Y:\Data</p>
-      </div>
-      <hr />
-
-      <div className="flex lg:flex justify-start px-20 gap-10">
-        <div className="mt-3">
-          <label className="mt-2 text-xl">Company Name:</label>
-          <input className="bg-gray-200 ml-12 appearance-none border-2 border-gray-200 rounded w-[300px] py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-purple-500" />
+      <div className="bg-sky-500 w-[100%] h-[25px]">
+        <h1 className="text-base font-bold pl-5">Gateway of Tally</h1>
+        <div className="">
+          <div className="grid lg:grid-cols-2 px-5 mt-5">
+            <div className="grid lg:grid-cols-2 px-5 ">
+              <div>
+                <h1 className="text-sm text-sky-400  ">CURRENT PERIOD</h1>
+                <p className="font-bold text-sm">1-Apr-22 to 31-March-23</p>
+              </div>
+              <div>
+                <h1 className="text-sm text-sky-400 pl-16 ">CURRENT PERIOD</h1>
+                <p className="font-bold text-sm">Wednesday,29-March-2023</p>
+              </div>
+            </div>
+            <div className=" w-[280px] h-[60vh] mt-20 mr-20 ">
+              <ul className="text-center">
+                <h1 className="text-sm text-white bg-sky-500 text-center">
+                  Gateway of Tally
+                </h1>
+                <li className="text-center">MASTERS</li>
+                <li className="bg-yellow-500 pr-5">Create</li>
+                <li className="pr-8">Alter</li>
+                <li className="pl-16">CHart of Accounts</li>
+                <li className="pl-12">TRANSACTIONS</li>
+                <li className="text-center">Vouchers</li>
+                <li className="">Day Book</li>
+                <li className="">UTILITIES</li>
+                <li className="">BaNking</li>
+                <li className="">REPORTS</li>
+                <li className="pl-9">Balance Sheet</li>
+                <li className="pl-9">Ratio Analysis</li>
+                <li className="pl-24">Display More Reports</li>
+                <li className="pr-8">Quit</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div>
-          <p>
-            Financial year beginning from
-            <br /> Books beginning from
-          </p>
-        </div>
-        <div className="text-sm font-bold">
-          <p>:1-Apr-23</p>
-          <p>:1-Apr-23</p>
-        </div>
-      </div>
-      <div className="px-20 mt-3">
-        <label className="mt-2 text-xl">Mailing Name:</label>
-        <input className="bg-gray-200 ml-16 appearance-none border-2 border-gray-200 rounded w-[300px] py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-purple-500" />
-      </div>
-      <div className="px-20 mt-3">
-        <label className="mt-2 text-xl">Address:</label>
-        <input className="bg-gray-200 ml-28 appearance-none border-2 border-gray-200 rounded w-[300px] py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-purple-500" />
-      </div>
-      <div className=" flex px-20 mt-3">
-        <label className=" text-xl">State:</label>
-        <div className="ml-36 mt-2">
-          <p className="font-bold">Not Applicable</p>
-        </div>
-      </div>
-      <div className=" flex px-20 ">
-        <label className="text-xl">Country:</label>
-        <div className="ml-36 mt-2">
-          <p className="font-bold">India</p>
-        </div>
-      </div>
-      <div className="px-20 mt-3">
-        <label className="mt-2 text-xl">Pincode:</label>
-        <input className="bg-gray-200 ml-28 appearance-none border-2 border-gray-200 rounded w-[300px] py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-purple-500" />
-      </div>
-      <div className="px-20 mt-3">
-        <label className="mt-2 text-xl">Telephone:</label>
-        <input className="bg-gray-200 ml-24 appearance-none border-2 border-gray-200 rounded w-[300px] py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-purple-500" />
-      </div>
-      <div className="px-20 mt-3">
-        <label className="mt-2 text-xl">Mobile:</label>
-        <input className="bg-gray-200 ml-32 appearance-none border-2 border-gray-200 rounded w-[300px] py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-purple-500" />
-      </div>
-      <div className="px-20 mt-3">
-        <label className="mt-2 text-xl">Fax:</label>
-        <input className="bg-gray-200 ml-40 appearance-none border-2 border-gray-200 rounded w-[300px] py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-purple-500" />
-      </div>
-      <div className="px-20 mt-3">
-        <label className="mt-2 text-xl">E-mail:</label>
-        <input className="bg-gray-200 ml-32 appearance-none border-2 border-gray-200 rounded w-[300px] py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-purple-500" />
-      </div>
-      <div className="px-20 mt-3">
-        <label className="mt-2 text-xl">Website:</label>
-        <input className="bg-gray-200 ml-28 appearance-none border-2 border-gray-200 rounded w-[300px] py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-purple-500" />
-      </div>
-      <hr className="px-20" />
-      <div className="flex gap-10 px-20 text-xl">
-        <p>Base Curruncy symbole:</p>
-        <span>
-          {" "}
-          <BsCurrencyRupee className="text-2xl" />
-        </span>
-      </div>
-      <div className="flex gap-10 px-20 text-xl">
-        <p className="text-xl">Formal name:</p>
-        <span>INR</span>
       </div>
     </section>
   );
