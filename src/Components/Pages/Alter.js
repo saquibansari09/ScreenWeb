@@ -9,7 +9,7 @@ const Alter = () => {
       </div>
       <div className="grid lg:grid-cols-3 justify-start gap-10">
         <div className=" mt-5 ml-3">
-          <label className=" text-sm  ">Company Name: </label>
+          <label className=" text-sm ">Company Name: </label>
           <input className="bg-gray-200 ml-8 appearance-none border-2  py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-purple-500" />
         </div>
         <div className="mt-5">
@@ -18,7 +18,7 @@ const Alter = () => {
             <br /> Books beginning from
           </p>
         </div>
-        <div className="text-sm font-bold mt-5">
+        <div className="text-sm font-semibold mt-5">
           <p>
             :1-Apr-23
             <br />

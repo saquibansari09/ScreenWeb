@@ -18,7 +18,7 @@ const Select = () => {
             <br /> Books beginning from
           </p>
         </div>
-        <div className="text-sm font-bold mt-5">
+        <div className="text-sm font-semibold mt-5">
           <p>
             :1-Apr-23
             <br />
