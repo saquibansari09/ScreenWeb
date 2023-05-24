@@ -92,12 +92,8 @@ function CollapsibleExample() {
               </NavDropdown>
             </Nav.Link>
           </Nav>
-          <Button
-            style={{ padding: "10px 20px" }}
-            className=" "
-            variant="light"
-          >
-            <a href="">G:Go To</a>
+          <Button style={{}} className=" " variant="light">
+            G:Go To
           </Button>
 
           <Nav.Link
