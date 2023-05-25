@@ -38,8 +38,8 @@ function CollapsibleExample() {
             </NavDropdown.Item>
             <NavDropdown.Item href="#action/3.4">CONFIGURE</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.4">Features</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.4">SEcurity</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.4">Tally Vault</NavDropdown.Item>
+            <NavDropdown.Item href="/security">SEcurity</NavDropdown.Item>
+            <NavDropdown.Item href="/tallyvult">Tally Vault</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.4">
               ONline Access
             </NavDropdown.Item>
@@ -124,7 +124,11 @@ function CollapsibleExample() {
             className="text-white left-6"
             href="#pricing"
           >
-            <NavDropdown title="E:Export" id="collasible-nav-dropdown">
+            <NavDropdown
+              title="E:Export"
+              id="collasible-nav-dropdown"
+              style={{ color: "skyblue-light" }}
+            >
               <NavDropdown.Item href="#action/3.1">Report</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">CuRrent</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Others</NavDropdown.Item>

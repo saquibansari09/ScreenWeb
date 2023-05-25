@@ -10,7 +10,7 @@ const Select = () => {
       <div className="grid lg:grid-cols-3 justify-start gap-10">
         <div className=" mt-5 ml-3">
           <label className=" text-sm  ">Company Name: </label>
-          <input className="bg-gray-200 ml-8 appearance-none border-2  py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-purple-500" />
+          <input className="bg-gray-200 ml-8 appearance-none border-2 shadow hover:shadow-2xl  py-1 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-purple-500" />
         </div>
         <div className="mt-5">
           <p className="">
@@ -30,45 +30,45 @@ const Select = () => {
         <label className="mt-2 text-sm mr-1 ">Mailing Name:</label>
         <input
           type="text"
-          className="bg-gray-200 appearance-none border-2 border-text-black py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-sky-400"
+          className="bg-gray-200 appearance-none border-2 shadow hover:shadow-2xl py-1 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-sky-400"
         />
       </div>
       <div className="flex gap-20 mt-5 ml-3">
         <label className="mt-2 text-sm">Address: </label>
-        <input className="bg-gray-200  appearance-none border-2 border-text-black   py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-sky-400" />
+        <input className="bg-gray-200  appearance-none border-2 shadow hover:shadow-2xl py-1 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-sky-400" />
       </div>
       <div className="flex gap-24 mt-5  ml-3">
         <label className="mt-2 text-sm gap-10">State:</label>
-        <input className="bg-gray-200  appearance-none border-2 py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-sky-400" />
+        <input className="bg-gray-200  appearance-none border-2 shadow hover:shadow-2xl py-1 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-sky-400" />
       </div>
 
       <div className="flex gap-20 mt-5 ml-3">
         <label className="mt-2 text-sm ">Country:</label>
-        <input className="bg-gray-200  appearance-none border-2 py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-sky-400" />
+        <input className="bg-gray-200  appearance-none border-2 shadow hover:shadow-2xl py-1 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-sky-400" />
       </div>
       <div className=" flex gap-20 mt-5 ml-3">
         <label className="mt-2 text-sm ">Pincode:</label>
-        <input className="bg-gray-200  appearance-none border-2 py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-sky-400" />
+        <input className="bg-gray-200  appearance-none border-2 shadow hover:shadow-2xl py-1 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-sky-400" />
       </div>
       <div className=" flex gap-16 mt-5 ml-3">
         <label className="mt-2 text-sm ">Telephone:</label>
-        <input className="bg-gray-200 appearance-none border-2 py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-sky-400" />
+        <input className="bg-gray-200 appearance-none border-2 shadow hover:shadow-2xl py-1 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-sky-400" />
       </div>
       <div className="flex gap-20 mt-5 ml-3">
         <label className="mt-2 text-sm mr-2">Mobile:</label>
-        <input className="bg-gray-200  appearance-none border-2 py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-sky-400" />
+        <input className="bg-gray-200  appearance-none border-2 shadow hover:shadow-2xl py-1 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-sky-400" />
       </div>
       <div className="flex gap-24 mt-5 ml-3">
         <label className="mt-2 text-sm mr-4">Fax:</label>
-        <input className="bg-gray-200  appearance-none border-2 py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-sky-400" />
+        <input className="bg-gray-200  appearance-none border-2 shadow hover:shadow-2xl py-1 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-sky-400" />
       </div>
       <div className=" flex gap-20 mt-5 ml-3">
         <label className="mt-2 text-sm mr-3">E-mail:</label>
-        <input className="bg-gray-200 appearance-none border-2 py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-sky-400" />
+        <input className="bg-gray-200 appearance-none border-2 shadow hover:shadow-2xl py-1 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-sky-400" />
       </div>
       <div className="flex gap-16 mt-5 ml-3">
-        <label className="mt-2 text-sm mr-3">Website:</label>
-        <input className="bg-gray-200 appearance-none border-2 py-2 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-sky-400" />
+        <label className="mt-2 text-sm mr-4">Website:</label>
+        <input className="bg-gray-200 appearance-none border-2 shadow hover:shadow-2xl py-1 px-4 text-gray-700  focus:outline-none focus:bg-yellow-400 focus:border-sky-400" />
       </div>
       <hr className="" />
       <div className="flex gap-10 ml-3 ">

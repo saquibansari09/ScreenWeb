@@ -1,12 +1,12 @@
 import React from "react";
-import { BsCurrencyRupee } from "react-icons/bs";
+// import { BsCurrencyRupee } from "react-icons/bs";
 
 const Create = () => {
   return (
     <section className="">
-      <div className="bg-sky-500 w-[100%] h-[25px]">
+      <div className="bg-sky-500 w-[100%] h-[25px] ">
         <h1 className="text-base font-bold pl-5">Gateway of Tally</h1>
-        <div className="">
+        <div>
           <div className="grid lg:grid-cols-2 px-5 mt-5">
             <div className="grid lg:grid-cols-2 px-5 ">
               <div>
@@ -18,17 +18,17 @@ const Create = () => {
                 <p className="font-bold text-sm">Wednesday,29-March-2023</p>
               </div>
             </div>
-            <div className=" w-[280px] h-[60vh] mt-20 mr-20 ">
+            <div className=" w-[300px] h-[60vh] mt-24 mb-10 ">
               <ul className="text-center">
                 <h1 className="text-sm text-white bg-sky-500 text-center">
                   Gateway of Tally
                 </h1>
-                <li className="text-center">MASTERS</li>
+                <li className="">MASTERS</li>
                 <li className="bg-yellow-500 pr-5">Create</li>
                 <li className="pr-8">Alter</li>
                 <li className="pl-16">CHart of Accounts</li>
                 <li className="pl-12">TRANSACTIONS</li>
-                <li className="text-center">Vouchers</li>
+                <li className="">Vouchers</li>
                 <li className="">Day Book</li>
                 <li className="">UTILITIES</li>
                 <li className="">BaNking</li>
