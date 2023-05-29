@@ -8,7 +8,6 @@ import Change from "./Components/Pages/Change";
 import Shut from "./Components/Pages/Shut";
 import TallyVult from "./Components/Pages/TallyVult";
 import Navbar from "./Components/Pages/Navbar";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Security from "./Components/Pages/Security";
 
 function App() {

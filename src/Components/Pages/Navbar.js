@@ -3,10 +3,18 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
+import Create from "../Pages/Create";
+import Alter from "../Pages/Alter";
 
 function CollapsibleExample() {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
+    <Navbar
+      collapseOnSelect
+      expand="lg"
+      bg="primary"
+      variant="dark"
+      className="rounded-none"
+    >
       <Container>
         <Navbar.Brand href="#home">
           <NavDropdown
@@ -14,10 +22,12 @@ function CollapsibleExample() {
             title="K:Company"
             id="collasible-nav-dropdown"
           >
-            <NavDropdown.Item className="" href="/create">
-              Create
+            <NavDropdown.Item href="/create">
+              <Create />
             </NavDropdown.Item>
-            <NavDropdown.Item href="/alter">Alter</NavDropdown.Item>
+            <NavDropdown.Item href="/alter">
+              <Alter />
+            </NavDropdown.Item>
             <NavDropdown.Item href="/change">ChangeGe</NavDropdown.Item>
             <NavDropdown.Item href="/select">Select</NavDropdown.Item>
             <NavDropdown.Item href="/shut">SHut</NavDropdown.Item>
