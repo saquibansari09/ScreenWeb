@@ -3,8 +3,6 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
-import Create from "../Pages/Create";
-import Alter from "../Pages/Alter";
 
 function CollapsibleExample() {
   return (
@@ -22,12 +20,8 @@ function CollapsibleExample() {
             title="K:Company"
             id="collasible-nav-dropdown"
           >
-            <NavDropdown.Item href="/create">
-              <Create />
-            </NavDropdown.Item>
-            <NavDropdown.Item href="/alter">
-              <Alter />
-            </NavDropdown.Item>
+            <NavDropdown.Item href="/create">Create</NavDropdown.Item>
+            <NavDropdown.Item href="/alter">Alter</NavDropdown.Item>
             <NavDropdown.Item href="/change">ChangeGe</NavDropdown.Item>
             <NavDropdown.Item href="/select">Select</NavDropdown.Item>
             <NavDropdown.Item href="/shut">SHut</NavDropdown.Item>
@@ -46,7 +40,9 @@ function CollapsibleExample() {
             <NavDropdown.Item href="#action/3.4">
               Browser Access
             </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.4">CONFIGURE</NavDropdown.Item>
+            <NavDropdown.Item className="bg-yellow-300" href="#action/3.4">
+              CONFIGURE
+            </NavDropdown.Item>
             <NavDropdown.Item href="#action/3.4">Features</NavDropdown.Item>
             <NavDropdown.Item href="/security">SEcurity</NavDropdown.Item>
             <NavDropdown.Item href="/tallyvult">Tally Vault</NavDropdown.Item>
@@ -102,9 +98,7 @@ function CollapsibleExample() {
               </NavDropdown>
             </Nav.Link>
           </Nav>
-          <Button style={{}} className=" " variant="light">
-            G:Go To
-          </Button>
+          <Button variant="light">G:Go To</Button>
 
           <Nav.Link
             style={{ margin: "0 30px" }}

@@ -18,8 +18,8 @@ function Alter(props) {
         </Modal.Title> */}
       </Modal.Header>
       <Modal.Body>
-        <section className=" ">
-          <div className="bg-sky-600 h-[40px] w-[100%]">
+        <section className="">
+          <div className="bg-sky-600 h-[40px] ">
             <h1 className="text-2xl font-bold px-3">Company Alteration </h1>
           </div>
           {/* <div className="grid lg:grid-cols-3 justify-start gap-10">
