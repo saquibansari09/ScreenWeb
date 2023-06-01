@@ -1,23 +1,19 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { BsCurrencyRupee } from "react-icons/bs";
-
-function Alter(props) {
+const Alter = (props) => {
   return (
     <Modal
-      className="rounded-none mt-11 pb-11 "
+      className="mt-11 pb-44"
       {...props}
       size="xl"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
       <Modal.Header closeButton>
-        {/* <Modal.Title id="contained-modal-title-vcenter">
-          Modal heading
-        </Modal.Title> */}
+        <Modal.Title id="contained-modal-title-vcenter"></Modal.Title>
       </Modal.Header>
-      <Modal.Body>
+      <Modal.Body className="justify-start">
         <section className="">
           <div className="bg-sky-600 h-[40px] ">
             <h1 className="text-2xl font-bold px-3">Company Alteration </h1>
@@ -89,7 +85,6 @@ function Alter(props) {
           <div className="flex gap-10 ml-3 ">
             <p className="text-sm">Base Curruncy symbole:</p>
             <span>
-              {" "}
               <BsCurrencyRupee className="text-sm mt-2" />
             </span>
           </div>
@@ -99,24 +94,8 @@ function Alter(props) {
           </div>
         </section>
       </Modal.Body>
-      {/* <Modal.Footer>
-        <Button onClick={props.onHide}></Button>
-      </Modal.Footer> */}
     </Modal>
   );
-}
+};
 
-function App() {
-  const [modalShow, setModalShow] = React.useState(false);
-
-  return (
-    <>
-      <Button variant="primary" onClick={() => setModalShow(true)}>
-        Alter
-      </Button>
-
-      <Alter show={modalShow} onHide={() => setModalShow(false)} />
-    </>
-  );
-}
-export default App;
+export default Alter;

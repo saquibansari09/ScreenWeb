@@ -2,9 +2,21 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import Button from "react-bootstrap/Button";
+// import Button from "react-bootstrap/Button";
+import ModalExample from "../Modal/modal";
+import AlterExample from "../Modal/Alter";
+import SelectExample from "../Modal/Select";
+import SecurityExample from "../Modal/Security";
+import ButtonExample from "../Modal/Button";
+import { useState } from "react";
 
 function CollapsibleExample() {
+  const [modalShow, setModalShow] = useState(false);
+  const [modalShow1, setModalShow1] = useState(false);
+  const [modalShow2, setModalShow2] = useState(false);
+  const [modalSecurity, setModalSecurity] = useState(false);
+  const [modalButton, setModalButton] = useState(false);
+
   return (
     <Navbar
       collapseOnSelect
@@ -13,17 +25,36 @@ function CollapsibleExample() {
       variant="dark"
       className="rounded-none"
     >
+      <ModalExample show={modalShow} onHide={() => setModalShow(false)} />
+      <AlterExample show={modalShow1} onHide={() => setModalShow1(false)} />
+      <SelectExample show={modalShow2} onHide={() => setModalShow2(false)} />
+      <SecurityExample
+        show={modalSecurity}
+        onHide={() => setModalSecurity(false)}
+      />
+      <ButtonExample show={modalButton} onHide={() => setModalButton(false)} />
+
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="#">
           <NavDropdown
             style={{ marginLeft: "30px" }}
             title="K:Company"
             id="collasible-nav-dropdown"
           >
-            <NavDropdown.Item href="/create">Create</NavDropdown.Item>
-            <NavDropdown.Item href="/alter">Alter</NavDropdown.Item>
+            <NavDropdown.Item onClick={() => setModalShow(true)}>
+              Create
+            </NavDropdown.Item>
+
+            <NavDropdown.Item onClick={() => setModalShow1(true)}>
+              Alter
+            </NavDropdown.Item>
+
             <NavDropdown.Item href="/change">ChangeGe</NavDropdown.Item>
-            <NavDropdown.Item href="/select">Select</NavDropdown.Item>
+
+            <NavDropdown.Item onClick={() => setModalShow2(true)}>
+              Select
+            </NavDropdown.Item>
+
             <NavDropdown.Item href="/shut">SHut</NavDropdown.Item>
 
             <NavDropdown.Item href="#action/3.4">
@@ -44,7 +75,9 @@ function CollapsibleExample() {
               CONFIGURE
             </NavDropdown.Item>
             <NavDropdown.Item href="#action/3.4">Features</NavDropdown.Item>
-            <NavDropdown.Item href="/security">SEcurity</NavDropdown.Item>
+            <NavDropdown.Item onClick={() => setModalSecurity(true)}>
+              SEcurity
+            </NavDropdown.Item>
             <NavDropdown.Item href="/tallyvult">Tally Vault</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.4">
               ONline Access
@@ -98,8 +131,10 @@ function CollapsibleExample() {
               </NavDropdown>
             </Nav.Link>
           </Nav>
-          <Button variant="light">G:Go To</Button>
 
+          <NavDropdown.Item onClick={() => setModalButton(true)}>
+            <div className="text-white text-xl">G:GoTo</div>
+          </NavDropdown.Item>
           <Nav.Link
             style={{ margin: "0 30px" }}
             className="text-white "

@@ -1,22 +1,16 @@
-//
-
 import React from "react";
-import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
 function Security(props) {
   return (
     <Modal
+      className="mt-20"
       {...props}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Modal.Header closeButton>
-        {/* <Modal.Title id="contained-modal-title-vcenter">
-          Modal heading
-        </Modal.Title> */}
-      </Modal.Header>
+      <Modal.Header closeButton></Modal.Header>
       <Modal.Body>
         <section>
           <div className="w-[100%] h-[30px] bg-sky-400"></div>
@@ -26,7 +20,7 @@ function Security(props) {
             </h1>
             <div className="flex justify-start gap-5 ">
               <h1 className="text-base">Company Name</h1>
-              <h2 className="font-bold text-base">
+              <h2 className="font-bold text-base ml-20">
                 :Viser Logistic Private Limited
               </h2>
             </div>
@@ -43,25 +37,7 @@ function Security(props) {
           </div>
         </section>
       </Modal.Body>
-      {/* <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
-      </Modal.Footer> */}
     </Modal>
   );
 }
-
-function App() {
-  const [modalShow, setModalShow] = React.useState(false);
-
-  return (
-    <>
-      <Button variant="primary" onClick={() => setModalShow(true)}>
-        Security
-      </Button>
-
-      <Security show={modalShow} onHide={() => setModalShow(false)} />
-    </>
-  );
-}
-
-export default App;
+export default Security;

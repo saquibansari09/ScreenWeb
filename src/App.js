@@ -1,14 +1,15 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
-import Create from "./Components/Pages/Create";
-import Alter from "./Components/Pages/Alter";
-import Select from "./Components/Pages/Select";
+import Create from "./Components/Modal/modal";
+import Alter from "./Components/Modal/Alter";
+import Select from "./Components/Modal/Select";
 import Change from "./Components/Pages/Change";
 import Shut from "./Components/Pages/Shut";
 import TallyVult from "./Components/Pages/TallyVult";
 import Navbar from "./Components/Pages/Navbar";
-import Security from "./Components/Pages/Security";
+import Security from "./Components/Modal/Security";
+import Button from "./Components/Modal/Button";
 
 function App() {
   const dropdownOptions = [
@@ -19,19 +20,22 @@ function App() {
     { title: "Shut", path: "/shut" },
     { title: "TallyVult", path: "/tallyvult" },
     { title: "Security", path: "/security" },
+    { title: "Button", path: "/button" },
   ];
+
   return (
     <div>
       <Navbar />
       <BrowserRouter>
         <Routes>
-          <Route path="/create" element={<Create />} />
+          <Route path="/creates" element={<Create />} />
           <Route path="/alter" element={<Alter />} />
           <Route path="/select" element={<Select />} />
           <Route path="/change" element={<Change />} />
           <Route path="/shut" element={<Shut />} />
           <Route path="/tallyvult" element={<TallyVult />} />
           <Route path="/security" element={<Security />} />
+          <Route path="/button" element={<Button />} />
         </Routes>
       </BrowserRouter>
     </div>
