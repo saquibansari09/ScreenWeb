@@ -14,8 +14,8 @@ function Security(props) {
       <Modal.Body>
         <section>
           <div className="w-[100%] h-[30px] bg-sky-400"></div>
-          <div className="w-[100%] h-[50vh]   ">
-            <h1 className="text-base text-center pt-2">
+          <div className="w-[100%] h-[50vh]">
+            <h1 className="text-base text-center text-black pt-2">
               Security And User Access
             </h1>
             <div className="flex justify-start gap-5 ">
@@ -28,7 +28,7 @@ function Security(props) {
             <div className="flex gap-10">
               <h1 className="text-base">Control User Access to Company Data</h1>
               <div>
-                <input className="px-2 py-1 border-2 border-black bg-yellow-200 focus:outline-2"></input>
+                <input className=" pl-5 w-[400px] h-[30px] border-2 focus:outline-none border-sky-400 bg-yellow-200 focus:outline-2"></input>
               </div>
             </div>
             <div className="mt-5">

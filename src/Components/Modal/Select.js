@@ -36,49 +36,49 @@ function Select(props) {
               </p>
             </div>
           </div> */}
-          <div className=" flex gap-10  mt-3 ml-3">
+          <div className=" flex gap-10  mt-2 ml-3">
             <label className="mt-2 text-sm mr-1 ">Mailing Name:</label>
             <input
               type="text"
-              className="bg-gray-200 appearance-none border-2 shadow hover:shadow-2xl py-1 px-4 text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
+              className="bg-gray-200 pl-5 appearance-none border-2 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
             />
           </div>
-          <div className="flex gap-20 mt-4 ml-3">
+          <div className="flex gap-20 mt-2 ml-3">
             <label className="mt-2 text-sm">Address: </label>
-            <input className="bg-gray-200  appearance-none border-2 shadow hover:shadow-2xl py-1 px-4 text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+            <input className="bg-gray-200 pl-5  appearance-none border-2 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
           </div>
-          <div className="flex gap-24 mt-4  ml-3">
+          <div className="flex gap-24 mt-2  ml-3">
             <label className="mt-2 text-sm gap-10">State:</label>
-            <input className="bg-gray-200  appearance-none border-2 shadow hover:shadow-2xl py-1 px-4 text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+            <input className="bg-gray-200 pl-5 appearance-none border-2 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
           </div>
 
-          <div className="flex gap-20 mt-4 ml-3">
+          <div className="flex gap-20 mt-2 ml-3">
             <label className="mt-2 text-sm ">Country:</label>
-            <input className="bg-gray-200  appearance-none border-2 shadow hover:shadow-2xl py-1 px-4 text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+            <input className="bg-gray-200 pl-5 appearance-none border-2 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
           </div>
-          <div className=" flex gap-20 mt-4 ml-3">
+          <div className=" flex gap-20 mt-2 ml-3">
             <label className="mt-2 text-sm ">Pincode:</label>
-            <input className="bg-gray-200  appearance-none border-2 shadow hover:shadow-2xl py-1 px-4 text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+            <input className="bg-gray-200 pl-5  appearance-none border-2 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
           </div>
-          <div className=" flex gap-16 mt-4 ml-3">
+          <div className=" flex gap-16 mt-2 ml-3">
             <label className="mt-2 text-sm ">Telephone:</label>
-            <input className="bg-gray-200 appearance-none border-2 shadow hover:shadow-2xl py-1 px-4 text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+            <input className="bg-gray-200 pl-5 appearance-none border-2 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
           </div>
-          <div className="flex gap-20 mt-4 ml-3">
+          <div className="flex gap-20 mt-2 ml-3">
             <label className="mt-2 text-sm mr-2">Mobile:</label>
-            <input className="bg-gray-200  appearance-none border-2 shadow hover:shadow-2xl py-1 px-4 text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+            <input className="bg-gray-200 pl-5 appearance-none border-2 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
           </div>
-          <div className="flex gap-24 mt-4 ml-3">
+          <div className="flex gap-24 mt-2 ml-3">
             <label className="mt-2 text-sm mr-4">Fax:</label>
-            <input className="bg-gray-200  appearance-none border-2 shadow hover:shadow-2xl py-1 px-4 text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+            <input className="bg-gray-200 pl-5 appearance-none border-2 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
           </div>
-          <div className=" flex gap-20 mt-4 ml-3">
+          <div className=" flex gap-20 mt-2 ml-3">
             <label className="mt-2 text-sm mr-3">E-mail:</label>
-            <input className="bg-gray-200 appearance-none border-2 shadow hover:shadow-2xl py-1 px-4 text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+            <input className="bg-gray-200 pl-5 appearance-none border-2 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
           </div>
-          <div className="flex gap-16 mt-4 ml-3">
+          <div className="flex gap-16 mt-2 ml-3">
             <label className="mt-2 text-sm mr-4">Website:</label>
-            <input className="bg-gray-200 appearance-none border-2 shadow hover:shadow-2xl py-1 px-4 text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+            <input className="bg-gray-200 pl-5 appearance-none border-2 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
           </div>
           <hr className="" />
           <div className="flex gap-10 ml-3 ">

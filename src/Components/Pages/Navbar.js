@@ -7,6 +7,7 @@ import ModalExample from "../Modal/modal";
 import AlterExample from "../Modal/Alter";
 import SelectExample from "../Modal/Select";
 import SecurityExample from "../Modal/Security";
+import TallyExample from "../Modal/TallyVult";
 import ButtonExample from "../Modal/Button";
 import { useState } from "react";
 
@@ -15,6 +16,7 @@ function CollapsibleExample() {
   const [modalShow1, setModalShow1] = useState(false);
   const [modalShow2, setModalShow2] = useState(false);
   const [modalSecurity, setModalSecurity] = useState(false);
+  const [modalTally, setModalTally] = useState(false);
   const [modalButton, setModalButton] = useState(false);
 
   return (
@@ -32,6 +34,8 @@ function CollapsibleExample() {
         show={modalSecurity}
         onHide={() => setModalSecurity(false)}
       />
+      <TallyExample show={modalTally} onHide={() => setModalTally(false)} />
+
       <ButtonExample show={modalButton} onHide={() => setModalButton(false)} />
 
       <Container>
@@ -78,7 +82,9 @@ function CollapsibleExample() {
             <NavDropdown.Item onClick={() => setModalSecurity(true)}>
               SEcurity
             </NavDropdown.Item>
-            <NavDropdown.Item href="/tallyvult">Tally Vault</NavDropdown.Item>
+            <NavDropdown.Item onClick={() => setModalTally(true)}>
+              Tally Vault
+            </NavDropdown.Item>
             <NavDropdown.Item href="#action/3.4">
               ONline Access
             </NavDropdown.Item>
