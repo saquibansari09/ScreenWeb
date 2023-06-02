@@ -13,7 +13,10 @@ function Security(props) {
       <Modal.Header closeButton></Modal.Header>
       <Modal.Body>
         <section>
-          <div className="w-[100%] h-[30px] bg-sky-400"></div>
+          <div className="flex justify-between px-2 w-[100%] h-[30px] bg-sky-400">
+            <h1 className="text-base">Security And User Access</h1>
+            <h1 className="text-base">Viser Solution Private Limited</h1>
+          </div>
           <div className="w-[100%] h-[50vh]">
             <h1 className="text-base text-center text-black pt-2">
               Security And User Access

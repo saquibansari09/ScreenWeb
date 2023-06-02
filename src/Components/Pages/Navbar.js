@@ -41,7 +41,7 @@ function CollapsibleExample() {
       <Container>
         <Navbar.Brand href="#">
           <NavDropdown
-            style={{ marginLeft: "30px" }}
+            style={{ marginRight: "10px" }}
             title="K:Company"
             id="collasible-nav-dropdown"
           >
@@ -139,10 +139,31 @@ function CollapsibleExample() {
           </Nav>
 
           <NavDropdown.Item onClick={() => setModalButton(true)}>
-            <div className="text-white text-xl">G:GoTo</div>
+            <NavDropdown
+              style={{ marginLeft: "20px" }}
+              className="text-white"
+              title="G:Go To"
+              id="collasible-nav-dropdown"
+            >
+              <NavDropdown.Item
+                className="w-[200px] f-[300px] text-center font-bold"
+                href="#action/3.1"
+              >
+                Online Access Configuration
+                <br />
+                <input className="w-[400px] h-[30px] border-2 border-sky-200 hover:bg-yellow-200 mt-2 focus:outline-none" />
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">
+                Transactions
+              </NavDropdown.Item>
+
+              <NavDropdown.Item href="#action/3.3">
+                CoNfiguration
+              </NavDropdown.Item>
+            </NavDropdown>
           </NavDropdown.Item>
           <Nav.Link
-            style={{ margin: "0 30px" }}
+            style={{ margin: "0 20px" }}
             className="text-white "
             href="#pricing"
           >
