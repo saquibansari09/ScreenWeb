@@ -33,11 +33,11 @@ function TallyVult(props) {
             </p>
             <div className="flex gap-12 mt-4 ">
               <label className="mt-2 text-sm ">Country Name</label>
-              <input className="bg-gray-200 pl-5  appearance-none border-2 hover:border-sky-400 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none hover:bg-yellow-200  focus:border-sky-400" />
+              <input className="bg-gray-200 pl-5  appearance-none border-2 hover:border-sky-400 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200  focus:border-sky-400" />
             </div>
             <div className="flex gap-20 mt-4 ">
               <label className="mt-2 text-sm ">Password</label>
-              <input className="bg-gray-200 pl-5  appearance-none border-2 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none hover:bg-yellow-200  focus:border-sky-400" />
+              <input className="bg-gray-200 pl-5  appearance-none border-2 hover:border-sky-400 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200  focus:border-sky-400" />
             </div>
           </div>
         </section>

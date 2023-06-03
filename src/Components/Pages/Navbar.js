@@ -25,7 +25,7 @@ function CollapsibleExample() {
       expand="lg"
       bg="primary"
       variant="dark"
-      className="rounded-none"
+      className=""
     >
       <ModalExample show={modalShow} onHide={() => setModalShow(false)} />
       <AlterExample show={modalShow1} onHide={() => setModalShow1(false)} />
@@ -42,6 +42,7 @@ function CollapsibleExample() {
         <Navbar.Brand href="#">
           <NavDropdown
             style={{ marginRight: "10px" }}
+            className="text-base"
             title="K:Company"
             id="collasible-nav-dropdown"
           >
@@ -98,7 +99,11 @@ function CollapsibleExample() {
               className="text-white"
               href="#features"
             >
-              <NavDropdown title="Y:Data" id="collasible-nav-dropdown">
+              <NavDropdown
+                className="text-base"
+                title="Y:Data"
+                id="collasible-nav-dropdown"
+              >
                 <NavDropdown.Item href="#action/3.1">
                   COMPANY DATA
                 </NavDropdown.Item>
@@ -141,29 +146,38 @@ function CollapsibleExample() {
           <NavDropdown.Item onClick={() => setModalButton(true)}>
             <NavDropdown
               style={{ marginLeft: "20px" }}
-              className="text-white"
+              className="text-white  "
               title="G:Go To"
               id="collasible-nav-dropdown"
             >
-              <NavDropdown.Item
-                className="w-[200px] f-[300px] text-center font-bold"
-                href="#action/3.1"
+              <NavDropdown.Item href="#action/3.1">
+                <div>
+                  <h1 className="text-xs text-center font-bold">
+                    Online Access Configuration
+                  </h1>
+                  <input className="w-[400px] h-[30px] border-2 border-sky-400 bg-yellow-200 mt-2 focus:outline-none focus:outline" />
+                </div>
+              </NavDropdown.Item>
+              <NavDropdown
+                className="w-[100%] h-[25px] px-3 text-white bg-sky-600"
+                title="List of Configuration"
+                id="collasible-nav-dropdown"
               >
-                Online Access Configuration
-                <br />
-                <input className="w-[400px] h-[30px] border-2 border-sky-200 hover:bg-yellow-200 mt-2 focus:outline-none" />
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">
-                Transactions
-              </NavDropdown.Item>
+                <NavDropdown.Item className="justify-center">
+                  Contact Details
+                </NavDropdown.Item>
 
-              <NavDropdown.Item href="#action/3.3">
-                CoNfiguration
-              </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">
+                  Connect Company on loading
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">
+                  Show Desktop version of Reports in Browser in mobile devices
+                </NavDropdown.Item>
+              </NavDropdown>
             </NavDropdown>
           </NavDropdown.Item>
           <Nav.Link
-            style={{ margin: "0 20px" }}
+            style={{ margin: "0 40px" }}
             className="text-white "
             href="#pricing"
           >
