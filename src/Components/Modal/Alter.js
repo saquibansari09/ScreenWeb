@@ -14,14 +14,14 @@ const Alter = (props) => {
         <Modal.Title id="contained-modal-title-vcenter"></Modal.Title>
       </Modal.Header>
       <Modal.Body className="justify-start">
-        <section className="">
+        <section>
           <div className="bg-sky-600 h-[40px] ">
             <h1 className="text-2xl font-bold px-3">Company Alteration </h1>
           </div>
-          {/* <div className="grid lg:grid-cols-3 justify-start gap-10">
-            <div className=" fle mt-3 ml-3">
-              <label className=" text-sm  ">Company Name: </label>
-              <input className="bg-gray-200 ml-8 appearance-none border-2 shadow hover:shadow-2xl  py-1 px-4 text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-purple-500" />
+          {/* <div className="flex-col gap-10">
+            <div className="  mt-3 ml-3">
+              <label className=" text-sm">Company Name: </label>
+              <input className="bg-gray-200 pl-5 appearance-none border-2  shadow hover:shadow-2xl w-[200px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
             </div>
             <div className="mt-2">
               <p className="text-xs mt-2">
@@ -44,54 +44,56 @@ const Alter = (props) => {
               className="bg-gray-200 pl-5 appearance-none border-2 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
             />
           </div>
-          <div className="flex gap-20 mt-2 ml-3">
-            <label className="mt-2 text-sm">Address: </label>
-            <input className="bg-gray-200 pl-5 appearance-none border-2 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
-          </div>
-          <div className="flex gap-24 mt-2  ml-3">
-            <label className="mt-2 text-sm gap-10">State:</label>
-            <input className="bg-gray-200 pl-5  appearance-none border-2 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
-          </div>
+          <form>
+            <div className="flex gap-20 mt-2 ml-3">
+              <label className="mt-2 text-sm">Address: </label>
+              <input className="bg-gray-200 pl-5 appearance-none border-2 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+            </div>
+            <div className="flex gap-24 mt-2  ml-3">
+              <label className="mt-2 text-sm gap-10">State:</label>
+              <input className="bg-gray-200 pl-5  appearance-none border-2 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+            </div>
 
-          <div className="flex gap-20 mt-2 ml-3">
-            <label className="mt-2 text-sm ">Country:</label>
-            <input className="bg-gray-200 pl-5  appearance-none border-2 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
-          </div>
-          <div className=" flex gap-20 mt-2 ml-3">
-            <label className="mt-2 text-sm ">Pincode:</label>
-            <input className="bg-gray-200 pl-5  appearance-none border-2 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
-          </div>
-          <div className=" flex gap-16 mt-2 ml-3">
-            <label className="mt-2 text-sm ">Telephone:</label>
-            <input className="bg-gray-200 pl-5 appearance-none border-2 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
-          </div>
-          <div className="flex gap-20 mt-2 ml-3">
-            <label className="mt-2 text-sm mr-2">Mobile:</label>
-            <input className="bg-gray-200 pl-5  appearance-none border-2 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
-          </div>
-          <div className="flex gap-24 mt-2 ml-3">
-            <label className="mt-2 text-sm mr-4">Fax:</label>
-            <input className="bg-gray-200 pl-5 appearance-none border-2 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
-          </div>
-          <div className=" flex gap-20 mt-2 ml-3">
-            <label className="mt-2 text-sm mr-3">E-mail:</label>
-            <input className="bg-gray-200 pl-5 appearance-none border-2 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
-          </div>
-          <div className="flex gap-16 mt-2 ml-3">
-            <label className="mt-2 text-sm mr-4">Website:</label>
-            <input className="bg-gray-200 pl-5 appearance-none border-2 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
-          </div>
-          <hr className="" />
-          <div className="flex gap-10 ml-3 ">
-            <p className="text-sm">Base Curruncy symbole:</p>
-            <span>
-              <BsCurrencyRupee className="text-sm mt-2" />
-            </span>
-          </div>
-          <div className="flex gap-10 ml-3 ">
-            <p className="text-sm">Formal name:</p>
-            <span className="text-sm ml-14">INR</span>
-          </div>
+            <div className="flex gap-20 mt-2 ml-3">
+              <label className="mt-2 text-sm ">Country:</label>
+              <input className="bg-gray-200 pl-5  appearance-none border-2 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+            </div>
+            <div className=" flex gap-20 mt-2 ml-3">
+              <label className="mt-2 text-sm ">Pincode:</label>
+              <input className="bg-gray-200 pl-5  appearance-none border-2 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+            </div>
+            <div className=" flex gap-16 mt-2 ml-3">
+              <label className="mt-2 text-sm ">Telephone:</label>
+              <input className="bg-gray-200 pl-5 appearance-none border-2 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+            </div>
+            <div className="flex gap-20 mt-2 ml-3">
+              <label className="mt-2 text-sm mr-2">Mobile:</label>
+              <input className="bg-gray-200 pl-5  appearance-none border-2 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+            </div>
+            <div className="flex gap-24 mt-2 ml-3">
+              <label className="mt-2 text-sm mr-4">Fax:</label>
+              <input className="bg-gray-200 pl-5 appearance-none border-2 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+            </div>
+            <div className=" flex gap-20 mt-2 ml-3">
+              <label className="mt-2 text-sm mr-3">E-mail:</label>
+              <input className="bg-gray-200 pl-5 appearance-none border-2 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+            </div>
+            <div className="flex gap-16 mt-2 ml-3">
+              <label className="mt-2 text-sm mr-4">Website:</label>
+              <input className="bg-gray-200 pl-5 appearance-none border-2 shadow hover:shadow-2xl w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+            </div>
+            <hr className="" />
+            <div className="flex gap-10 ml-3 ">
+              <p className="text-sm">Base Curruncy symbole:</p>
+              <span>
+                <BsCurrencyRupee className="text-sm mt-2" />
+              </span>
+            </div>
+            <div className="flex gap-10 ml-3 ">
+              <p className="text-sm">Formal name:</p>
+              <span className="text-sm ml-14">INR</span>
+            </div>
+          </form>
         </section>
       </Modal.Body>
     </Modal>

@@ -146,38 +146,40 @@ function CollapsibleExample() {
           <NavDropdown.Item onClick={() => setModalButton(true)}>
             <NavDropdown
               style={{ marginLeft: "20px" }}
-              className="text-white  "
+              className="text-white"
               title="G:Go To"
               id="collasible-nav-dropdown"
             >
-              <NavDropdown.Item href="#action/3.1">
-                <div>
-                  <h1 className="text-xs text-center font-bold">
-                    Online Access Configuration
-                  </h1>
-                  <input className="w-[400px] h-[30px] border-2 border-sky-400 bg-yellow-200 mt-2 focus:outline-none focus:outline" />
-                </div>
-              </NavDropdown.Item>
+              <div className="w-[460px] ">
+                <NavDropdown.Item href="#action/3.1">
+                  <div>
+                    <h1 className="text-xs text-center font-bold">
+                      Online Access Configuration
+                    </h1>
+                    <input className="w-[430px] h-[30px] border-2 border-sky-400 bg-yellow-200 mt-2 focus:outline-none focus:outline" />
+                  </div>
+                </NavDropdown.Item>
+              </div>
               <NavDropdown
                 className="w-[100%] h-[25px] px-3 text-white bg-sky-600"
                 title="List of Configuration"
                 id="collasible-nav-dropdown"
               >
-                <NavDropdown.Item className="justify-center">
-                  Contact Details
-                </NavDropdown.Item>
+                <div className="w-[460px] h-[100px]">
+                  <NavDropdown.Item>Contact Details</NavDropdown.Item>
 
-                <NavDropdown.Item href="#action/3.2">
-                  Connect Company on loading
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Show Desktop version of Reports in Browser in mobile devices
-                </NavDropdown.Item>
+                  <NavDropdown.Item href="#action/3.2">
+                    Connect Company on loading
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#action/3.3">
+                    Show Desktop version of Reports in Browser in mobile devices
+                  </NavDropdown.Item>
+                </div>
               </NavDropdown>
             </NavDropdown>
           </NavDropdown.Item>
           <Nav.Link
-            style={{ margin: "0 40px" }}
+            style={{ margin: "0 35px" }}
             className="text-white "
             href="#pricing"
           >
