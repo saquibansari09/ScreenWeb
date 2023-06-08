@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.dropdown-menu.show {
+  border-radius: 0px;
+}
+.dropdown-item:focus,
+.dropdown-item:hover {
+  background-color: gold !important;
+}
