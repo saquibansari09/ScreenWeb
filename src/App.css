@@ -44,3 +44,7 @@
 .dropdown-item:hover {
   background-color: gold !important;
 }
+
+.nav-link {
+  text-align: center;
+}
