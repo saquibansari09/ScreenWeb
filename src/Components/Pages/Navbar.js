@@ -143,9 +143,9 @@ function CollapsibleExample() {
             </Nav.Link>
           </Nav>
 
-          <NavDropdown.Item onClick={() => setModalButton(true)}>
+          <div onClick={() => setModalButton(true)}>
             <NavDropdown
-              style={{ margin: "0 20px" }}
+              style={{ margin: "0 35px" }}
               className="text-white "
               title="G:Go To"
               id="collasible-nav-dropdown"
@@ -177,7 +177,7 @@ function CollapsibleExample() {
                 </div>
               </NavDropdown>
             </NavDropdown>
-          </NavDropdown.Item>
+          </div>
           <Nav.Link
             style={{ margin: "0 20px" }}
             className="text-white "
