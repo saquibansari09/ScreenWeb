@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
@@ -10,6 +11,7 @@ import TallyVult from "./Components/Modal/TallyVult";
 import Navbar from "./Components/Pages/Navbar";
 import Security from "./Components/Modal/Security";
 import Button from "./Components/Modal/Button";
+import Axios from "axios";
 
 function App() {
   const dropdownOptions = [
@@ -22,6 +24,16 @@ function App() {
     { title: "Security", path: "/security" },
     { title: "Button", path: "/button" },
   ];
+
+  const [data, setData] = useState("");
+  const getData = async () => {
+    const response = await Axios.get("http://localhost:5000/getData");
+    setData(response.data);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <div>
@@ -38,6 +50,7 @@ function App() {
           <Route path="/button" element={<Button />} />
         </Routes>
       </BrowserRouter>
+      <div>{data}</div>
     </div>
   );
 }
