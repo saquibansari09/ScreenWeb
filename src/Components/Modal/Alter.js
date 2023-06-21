@@ -1,7 +1,38 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
 import { BsCurrencyRupee } from "react-icons/bs";
+import { useState } from "react";
+
 const Alter = (props) => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [mobileNumber, setMobileNumber] = useState("");
+  const [message, setMessage] = useState("");
+
+  let handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      let res = await fetch("https://httpbin.org/post", {
+        method: "POST",
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          mobileNumber: mobileNumber,
+        }),
+      });
+      let resJson = await res.json();
+      if (res.status === 200) {
+        setName("");
+        setEmail("");
+        setMessage("User created successfully");
+      } else {
+        setMessage("Some error occured");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <Modal
       className="mt-11 pb-44"
@@ -153,6 +184,9 @@ const Alter = (props) => {
                       <input className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
                     </div>
                   </div>
+                </div>
+                <div>
+                  <button onSubmit={handleSubmit}>Submit</button>
                 </div>
               </form>
             </div>
