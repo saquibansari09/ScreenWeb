@@ -1,7 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import { BsCurrencyRupee } from "react-icons/bs";
 const Alter = (props) => {
+  const [cname, setCName] = useState("");
+  const [mname, setMName] = useState("");
+  const [address, setAddress] = useState("");
+  const [state, setState] = useState("");
+  const [country, setCountry] = useState("");
+  const [pincode, setPincode] = useState("");
+  const [telephone, setTelephone] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [fax, setFax] = useState("");
+  const [email, setEmail] = useState("");
+  const [website, setWebsite] = useState("");
+
+  let handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      console.log("-----", cname);
+      let res = await fetch("http://localhost:5000/storeAlter", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          cname: cname,
+          mname: mname,
+          address: address,
+          state: state,
+          country: country,
+          pincode: pincode,
+          telephone: telephone,
+          mobile: mobile,
+          fax: fax,
+          email: email,
+          website: website,
+        }),
+      }).then((res) => console.log(res));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <Modal
       className="mt-11 pb-44"
@@ -20,7 +61,7 @@ const Alter = (props) => {
           </div>
           <div className="flex gap-5">
             <div className="flex-1">
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="my-4 w-[100%]">
                   <div className="flex w-[100%] justify-between items-center">
                     <label className="text-sm" style={{ flex: 0.5 }}>
@@ -28,7 +69,11 @@ const Alter = (props) => {
                     </label>
                     <div style={{ flex: 1 }}>
                       :
-                      <input className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+                      <input
+                        value={cname}
+                        onChange={(e) => setCName(e.target.value)}
+                        className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
+                      />
                     </div>
                   </div>
                 </div>
@@ -39,18 +84,11 @@ const Alter = (props) => {
                     </label>
                     <div style={{ flex: 1 }}>
                       :
-                      <input className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
-                    </div>
-                  </div>
-                </div>
-                <div className="my-4 w-[100%]">
-                  <div className="flex w-[100%] justify-between items-center">
-                    <label className="text-sm" style={{ flex: 0.5 }}>
-                      Company Name
-                    </label>
-                    <div style={{ flex: 1 }}>
-                      :
-                      <input className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+                      <input
+                        value={mname}
+                        onChange={(e) => setMName(e.target.value)}
+                        className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
+                      />
                     </div>
                   </div>
                 </div>
@@ -61,7 +99,11 @@ const Alter = (props) => {
                     </label>
                     <div style={{ flex: 1 }}>
                       :
-                      <input className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+                      <input
+                        value={address}
+                        onChange={(e) => setAddress(e.target.value)}
+                        className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
+                      />
                     </div>
                   </div>
                 </div>
@@ -72,7 +114,11 @@ const Alter = (props) => {
                     </label>
                     <div style={{ flex: 1 }}>
                       :
-                      <input className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+                      <input
+                        value={state}
+                        onChange={(e) => setState(e.target.value)}
+                        className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
+                      />
                     </div>
                   </div>
                 </div>
@@ -83,7 +129,11 @@ const Alter = (props) => {
                     </label>
                     <div style={{ flex: 1 }}>
                       :
-                      <input className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+                      <input
+                        value={country}
+                        onChange={(e) => setCountry(e.target.value)}
+                        className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
+                      />
                     </div>
                   </div>
                 </div>
@@ -94,7 +144,11 @@ const Alter = (props) => {
                     </label>
                     <div style={{ flex: 1 }}>
                       :
-                      <input className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+                      <input
+                        value={pincode}
+                        onChange={(e) => setPincode(e.target.value)}
+                        className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
+                      />
                     </div>
                   </div>
                 </div>
@@ -105,7 +159,11 @@ const Alter = (props) => {
                     </label>
                     <div style={{ flex: 1 }}>
                       :
-                      <input className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+                      <input
+                        value={telephone}
+                        onChange={(e) => setTelephone(e.target.value)}
+                        className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
+                      />
                     </div>
                   </div>
                 </div>
@@ -116,7 +174,11 @@ const Alter = (props) => {
                     </label>
                     <div style={{ flex: 1 }}>
                       :
-                      <input className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+                      <input
+                        value={mobile}
+                        onChange={(e) => setMobile(e.target.value)}
+                        className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
+                      />
                     </div>
                   </div>
                 </div>
@@ -127,7 +189,11 @@ const Alter = (props) => {
                     </label>
                     <div style={{ flex: 1 }}>
                       :
-                      <input className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+                      <input
+                        value={fax}
+                        onChange={(e) => setFax(e.target.value)}
+                        className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
+                      />
                     </div>
                   </div>
                 </div>
@@ -138,7 +204,11 @@ const Alter = (props) => {
                     </label>
                     <div style={{ flex: 1 }}>
                       :
-                      <input className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+                      <input
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
+                      />
                     </div>
                   </div>
                 </div>
@@ -149,10 +219,15 @@ const Alter = (props) => {
                     </label>
                     <div style={{ flex: 1 }}>
                       :
-                      <input className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+                      <input
+                        value={website}
+                        onChange={(e) => setWebsite(e.target.value)}
+                        className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
+                      />
                     </div>
                   </div>
                 </div>
+                <button onSubmit={handleSubmit}>Send</button>
               </form>
             </div>
             <div className="flex-1">

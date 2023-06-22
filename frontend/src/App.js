@@ -50,7 +50,6 @@ function App() {
           <Route path="/button" element={<Button />} />
         </Routes>
       </BrowserRouter>
-      <div>{data}</div>
     </div>
   );
 }

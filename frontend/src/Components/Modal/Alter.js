@@ -9,7 +9,13 @@ const Alter = (props) => {
   const [address, setAddress] = useState("");
   const [state, setState] = useState("");
   const [country, setCountry] = useState("");
-  const [] = useState("");
+  const [pincode, setPincode] = useState("");
+  const [telephone, setTelephone] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [fax, setFax] = useState("");
+  const [email, setEmail] = useState("");
+  const [website, setWebsite] = useState("");
+
   let handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -26,6 +32,12 @@ const Alter = (props) => {
           address: address,
           state: state,
           country: country,
+          pincode: pincode,
+          telephone: telephone,
+          mobile: mobile,
+          fax: fax,
+          email: email,
+          website: website,
         }),
       }).then((res) => console.log(res));
     } catch (err) {
@@ -136,7 +148,11 @@ const Alter = (props) => {
                     </label>
                     <div style={{ flex: 1 }}>
                       :
-                      <input className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+                      <input
+                        value={pincode}
+                        onChange={(e) => setPincode(e.target.value)}
+                        className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
+                      />
                     </div>
                   </div>
                 </div>
@@ -147,7 +163,11 @@ const Alter = (props) => {
                     </label>
                     <div style={{ flex: 1 }}>
                       :
-                      <input className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+                      <input
+                        value={telephone}
+                        onChange={(e) => setTelephone(e.target.value)}
+                        className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
+                      />
                     </div>
                   </div>
                 </div>
@@ -158,7 +178,11 @@ const Alter = (props) => {
                     </label>
                     <div style={{ flex: 1 }}>
                       :
-                      <input className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+                      <input
+                        value={mobile}
+                        onChange={(e) => setMobile(e.target.value)}
+                        className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
+                      />
                     </div>
                   </div>
                 </div>
@@ -169,7 +193,11 @@ const Alter = (props) => {
                     </label>
                     <div style={{ flex: 1 }}>
                       :
-                      <input className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+                      <input
+                        value={fax}
+                        onChange={(e) => setFax(e.target.value)}
+                        className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
+                      />
                     </div>
                   </div>
                 </div>
@@ -180,7 +208,11 @@ const Alter = (props) => {
                     </label>
                     <div style={{ flex: 1 }}>
                       :
-                      <input className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+                      <input
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
+                      />
                     </div>
                   </div>
                 </div>
@@ -191,11 +223,21 @@ const Alter = (props) => {
                     </label>
                     <div style={{ flex: 1 }}>
                       :
-                      <input className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400" />
+                      <input
+                        value={email}
+                        onChange={(e) => setWebsite(e.target.value)}
+                        className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
+                      />
                     </div>
                   </div>
                 </div>
-                <button type="submit">Create</button>
+                <button
+                  onSubmit={handleSubmit}
+                  type="submit"
+                  placeholder="submit"
+                >
+                  Submit
+                </button>
               </form>
             </div>
             <div className="flex-1">
