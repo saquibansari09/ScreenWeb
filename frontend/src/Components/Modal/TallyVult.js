@@ -1,7 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 
 function TallyVult(props) {
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+
+  let handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      console.log("-----", name);
+      let res = await fetch("http://localhost:5000/storeAlter", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name,
+          password: password,
+        }),
+      }).then((res) => console.log(res));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <Modal
       className=""
@@ -31,14 +54,25 @@ function TallyVult(props) {
               (if you forget your TallyVault Password you will permanently lose
               Access to your Company Data)
             </p>
-            <div className="flex gap-12 mt-4 ">
-              <label className="mt-2 text-sm ">Country Name</label>
-              <input className="bg-gray-200 pl-5  appearance-none border-2 hover:border-sky-400  w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200  focus:border-sky-400" />
-            </div>
-            <div className="flex gap-20 mt-4 ">
-              <label className="mt-2 text-sm ">Password</label>
-              <input className="bg-gray-200 pl-5  appearance-none border-2 hover:border-sky-400  w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200  focus:border-sky-400" />
-            </div>
+            <form onSubmit={handleSubmit}>
+              <div className="flex gap-12 mt-4 ">
+                <label className="mt-2 text-sm ">Country Name</label>
+                <input
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="bg-gray-200 pl-5  appearance-none border-2 hover:border-sky-400  w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200  focus:border-sky-400"
+                />
+              </div>
+              <div className="flex gap-20 mt-4 ">
+                <label className="mt-2 text-sm ">Password</label>
+                <input
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="bg-gray-200 pl-5  appearance-none border-2 hover:border-sky-400  w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200  focus:border-sky-400"
+                />
+              </div>
+              <button>Send</button>
+            </form>
           </div>
         </section>
       </Modal.Body>
