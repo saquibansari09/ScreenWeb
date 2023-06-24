@@ -1,10 +1,13 @@
 import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
+import { dataSource } from "./Database.js";
 // import sqlite3 from "sqlite3";
 const app = express();
+
 // var bodyParser = require("body-parser");
 var jsonParser = bodyParser.json();
+dataSource.initialize().then(() => console.log("connected"));
 
 app.use(cors());
 app.use(bodyParser.json());
