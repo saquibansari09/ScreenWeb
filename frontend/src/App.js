@@ -26,7 +26,7 @@ function App() {
 
   const [data, setData] = useState("");
   const getData = async () => {
-    const response = await Axios.get("http://localhost:5000/getData");
+    const response = await Axios.post("http://localhost:5000/storeAlter");
     setData(response.data);
   };
 

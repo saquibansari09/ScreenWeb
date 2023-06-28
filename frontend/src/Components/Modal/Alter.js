@@ -4,8 +4,8 @@ import { useState } from "react";
 import { BsCurrencyRupee } from "react-icons/bs";
 
 const Alter = (props) => {
-  const [cname, setCName] = useState("");
-  const [mname, setMName] = useState("");
+  const [companyname, setCName] = useState("");
+  const [mailingname, setMName] = useState("");
   const [address, setAddress] = useState("");
   const [state, setState] = useState("");
   const [country, setCountry] = useState("");
@@ -20,15 +20,15 @@ const Alter = (props) => {
     e.preventDefault();
 
     try {
-      console.log("-----", cname);
+      console.log("-----", companyname);
       let res = await fetch("http://localhost:5000/storeAlter", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          cname: cname,
-          mname: mname,
+          companyname: companyname,
+          mailingname: mailingname,
           address: address,
           state: state,
           country: country,
@@ -73,7 +73,7 @@ const Alter = (props) => {
                     <div style={{ flex: 1 }}>
                       :
                       <input
-                        value={cname}
+                        value={companyname}
                         onChange={(e) => setCName(e.target.value)}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
                       />
@@ -88,7 +88,7 @@ const Alter = (props) => {
                     <div style={{ flex: 1 }}>
                       :
                       <input
-                        value={mname}
+                        value={mailingname}
                         onChange={(e) => setMName(e.target.value)}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
                       />
