@@ -8,45 +8,52 @@ export const User = new EntitySchema({
       type: "int",
       generated: true,
     },
-    CompanyName: {
+    copanyname: {
       type: "varchar",
+      nullable: true,
     },
 
-    MailingName: {
+    mailingname: {
       type: "varchar",
+      nullable: true,
     },
-    Address: {
+    address: {
       type: "varchar",
+      nullable: true,
     },
-    State: {
+    state: {
       type: "varchar",
+      nullable: true,
     },
-    Country: {
+    country: {
       type: "varchar",
+      nullable: true,
     },
-    Pincode: {
-      primary: true,
-      type: "int",
-      generated: true,
-    },
-    State: {
+    pincode: {
       type: "varchar",
-    },
-    Telephone: {
-      type: "varchar",
+      nullable: true,
     },
 
-    Mobile: {
+    telephone: {
       type: "varchar",
+      nullable: true,
     },
-    Fax: {
+
+    mobile: {
       type: "varchar",
+      nullable: true,
     },
-    Email: {
+    fax: {
       type: "varchar",
+      nullable: true,
     },
-    Website: {
+    email: {
       type: "varchar",
+      nullable: true,
+    },
+    website: {
+      type: "varchar",
+      nullable: true,
     },
   },
 });
