@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import { BsCurrencyRupee } from "react-icons/bs";
+
 const Alter = (props) => {
   const [cname, setCName] = useState("");
   const [mname, setMName] = useState("");

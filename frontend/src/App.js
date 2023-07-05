@@ -12,6 +12,7 @@ import Navbar from "./Components/Pages/Navbar";
 import Security from "./Components/Modal/Security";
 import Button from "./Components/Modal/Button";
 import Axios from "axios";
+
 function App() {
   const dropdownOptions = [
     { title: "Create", path: "/create" },
@@ -24,14 +25,26 @@ function App() {
     { title: "Button", path: "/button" },
   ];
 
-  const [data, setData] = useState("");
-  const getData = async () => {
-    const response = await Axios.post("http://localhost:5000/storeAlter");
-    setData(response.data);
+  // const [data, setData] = useState("");
+  const [open, setOpen] = useState("");
+
+  // const getData = async () => {
+  //   const response = await Axios.post("http://localhost:5000/storeAlter");
+  //   setData(response.data);
+  // };
+
+  // useEffect(() => {
+  //   getData();
+  // }, []);
+
+  const postData = async () => {
+    const response = await Axios.get("http://localhost:5000/storeAlter");
+    setOpen(response.data);
   };
 
+  console.log(open);
   useEffect(() => {
-    getData();
+    postData();
   }, []);
 
   return (

@@ -9,6 +9,7 @@ import SelectExample from "../Modal/Select";
 import SecurityExample from "../Modal/Security";
 import TallyExample from "../Modal/TallyVult";
 import ButtonExample from "../Modal/Button";
+
 import { useState } from "react";
 
 function CollapsibleExample() {
@@ -20,13 +21,7 @@ function CollapsibleExample() {
   const [modalButton, setModalButton] = useState(false);
 
   return (
-    <Navbar
-      collapseOnSelect
-      expand="lg"
-      bg="primary"
-      variant="dark"
-      className=""
-    >
+    <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
       <ModalExample show={modalShow} onHide={() => setModalShow(false)} />
       <AlterExample show={modalShow1} onHide={() => setModalShow1(false)} />
       <SelectExample show={modalShow2} onHide={() => setModalShow2(false)} />
@@ -121,7 +116,7 @@ function CollapsibleExample() {
               </NavDropdown>
             </Nav.Link>
             <Nav.Link
-              style={{ margin: "0 20px" }}
+              style={{ margin: "0 30px" }}
               className="text-white"
               href="#pricing"
             >
