@@ -12,6 +12,7 @@ import Navbar from "./Components/Pages/Navbar";
 import Security from "./Components/Modal/Security";
 import Button from "./Components/Modal/Button";
 import Axios from "axios";
+import Data from "./Components/Data";
 
 function App() {
   const dropdownOptions = [
@@ -50,6 +51,7 @@ function App() {
   return (
     <div>
       <Navbar />
+
       <BrowserRouter>
         <Routes>
           <Route path="/creates" element={<Create />} />
@@ -62,7 +64,9 @@ function App() {
           <Route path="/button" element={<Button />} />
         </Routes>
       </BrowserRouter>
-      {/* <div>{data}</div> */}
+      <div>
+        <Data />
+      </div>
     </div>
   );
 }
