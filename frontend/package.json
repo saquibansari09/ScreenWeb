@@ -16,6 +16,7 @@
     "axios": "^1.4.0",
     "bootstrap": "^5.2.3",
     "bootstrap-colorpicker": "^3.4.0",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "framer-motion": "^10.12.12",
     "pg": "^8.11.0",
