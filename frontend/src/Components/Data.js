@@ -8,20 +8,21 @@ import { DataGrid } from "@mui/x-data-grid";
 const Data = () => {
   const [open, setOpen] = useState([]);
 
-  // const data = async () => {
-  //   const res = await axios.get("http://localhost:5000/storeAlter");
+  const data = async () => {
+    const res = await axios.get("http://localhost:5000/storeAlter");
+    setOpen(res.data);
+  };
+  useEffect(() => {
+    data();
+  }, []);
 
-  //   setOpen(res.data);
-  // };
-  // useEffect(() => {
-  //   data();
-  // }, []);
+  console.log(open, "ooooooooooo");
 
   const columns = [
     { field: "id", headerName: "ID", width: 90 },
     {
-      field: "companyname",
-      headerName: "Company Name",
+      field: "copanyname",
+      headerName: "Companyname",
       width: 150,
     },
 
@@ -89,29 +90,11 @@ const Data = () => {
     },
   ];
 
-  const rows = [
-    {
-      id: 1,
-      companyname: "viser",
-      mailingname: "bla bla",
-      address: "ghansoli",
-      state: "Maharashtra",
-      country: "India",
-      telephone: "68836464783",
-      mobile: "8767636346",
-      fax: "fax@gmai.com",
-      email: "vdhdh@gmail.com",
-      website: "hgfhfh",
-      pincode: "4000701",
-    },
-  ];
-
-  console.log(open, "ooooooooooo");
   return (
     <div>
-      <Box sx={{ height: 400, width: "100%" }}>
+      <Box sx={{ width: "100%", height: "100vh" }}>
         <DataGrid
-          rows={rows}
+          rows={open}
           columns={columns}
           initialState={{
             pagination: {
