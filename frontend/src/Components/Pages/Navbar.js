@@ -9,6 +9,8 @@ import SelectExample from "../Modal/Select";
 import SecurityExample from "../Modal/Security";
 import TallyExample from "../Modal/TallyVult";
 import ButtonExample from "../Modal/Button";
+import FeaturesExample from "../Modal/Features";
+import ConfigurationExample from "../Modal/Configuration";
 
 import { useState } from "react";
 
@@ -19,6 +21,8 @@ function CollapsibleExample() {
   const [modalSecurity, setModalSecurity] = useState(false);
   const [modalTally, setModalTally] = useState(false);
   const [modalButton, setModalButton] = useState(false);
+  const [modalFeatures, setModalFeatures] = useState(false);
+  const [modalConfiguration, setModalConfiguration] = useState(false);
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
@@ -32,6 +36,18 @@ function CollapsibleExample() {
       <TallyExample show={modalTally} onHide={() => setModalTally(false)} />
 
       <ButtonExample show={modalButton} onHide={() => setModalButton(false)} />
+      <SecurityExample
+        show={modalSecurity}
+        onHide={() => setModalSecurity(false)}
+      />
+      <FeaturesExample
+        show={modalFeatures}
+        onHide={() => setModalFeatures(false)}
+      />
+      <ConfigurationExample
+        show={modalConfiguration}
+        onHide={() => setModalConfiguration(false)}
+      />
 
       <Container>
         <Navbar.Brand href="#">
@@ -71,10 +87,15 @@ function CollapsibleExample() {
             <NavDropdown.Item href="#action/3.4">
               Browser Access
             </NavDropdown.Item>
-            <NavDropdown.Item className="bg-yellow-300" href="#action/3.4">
+            <NavDropdown.Item
+              onClick={() => setModalConfiguration(true)}
+              className="bg-yellow-300"
+            >
               CONFIGURE
             </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.4">Features</NavDropdown.Item>
+            <NavDropdown.Item onClick={() => setModalFeatures(true)}>
+              Features
+            </NavDropdown.Item>
             <NavDropdown.Item onClick={() => setModalSecurity(true)}>
               SEcurity
             </NavDropdown.Item>
@@ -161,9 +182,14 @@ function CollapsibleExample() {
                 id="collasible-nav-dropdown"
               >
                 <div className="w-[460px] h-[100px]">
-                  <NavDropdown.Item>Contact Details</NavDropdown.Item>
+                  <NavDropdown.Item onClick={() => setModalSecurity(true)}>
+                    Contact Details
+                  </NavDropdown.Item>
 
-                  <NavDropdown.Item href="#action/3.2">
+                  <NavDropdown.Item
+                    onClick={() => setModalTally(true)}
+                    href="#action/3.2"
+                  >
                     Connect Company on loading
                   </NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.3">

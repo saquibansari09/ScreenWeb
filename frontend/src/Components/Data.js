@@ -20,6 +20,7 @@ const Data = () => {
 
   const columns = [
     { field: "id", headerName: "ID", width: 90 },
+
     {
       field: "copanyname",
       headerName: "Companyname",
@@ -82,6 +83,7 @@ const Data = () => {
       width: 150,
       editable: true,
     },
+
     {
       field: "website",
       headerName: "website",

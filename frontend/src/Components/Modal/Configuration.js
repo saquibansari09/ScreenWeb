@@ -1,33 +1,32 @@
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 
-function Security(props) {
-  const [security, setSecurity] = useState("");
-  const [email, setEmail] = useState("");
+function Configuration(props) {
+  const [configuration, setConfiguration] = useState("");
+  //   const [email, setEmail] = useState("");
 
   let handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      console.log("-----", security);
+      console.log("-----", configuration);
       let res = await fetch("http://localhost:5000/storeAlter", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          security: security,
-          email: email,
+          configuration: configuration,
+          //   email: email,
         }),
       }).then((res) => console.log(res));
     } catch (err) {
       console.log(err);
     }
   };
-
   return (
     <Modal
-      className="mt-20"
+      className="mt-5"
       {...props}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
@@ -37,12 +36,12 @@ function Security(props) {
       <Modal.Body>
         <section>
           <div className="flex justify-between px-2 w-[100%] h-[30px] bg-sky-400">
-            <h1 className="text-base">Security And User Access</h1>
+            <h1 className="text-base">Configuration</h1>
             <h1 className="text-base">Viser Solution Private Limited</h1>
           </div>
           <div className="w-[100%] h-[50vh]">
             <h1 className="text-base text-center text-black pt-2">
-              Security And User Access
+              Features And User Access
             </h1>
             <div className="flex justify-start gap-5 ">
               <h1 className="text-base">Company Name</h1>
@@ -60,14 +59,14 @@ function Security(props) {
                   <div style={{ flex: 1 }}>
                     :
                     <input
-                      value={security}
-                      onChange={(e) => setSecurity(e.target.value)}
+                      value={configuration}
+                      onChange={(e) => setConfiguration(e.target.value)}
                       className="bg-gray-200 pl-5  appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
                     />
                   </div>
                 </div>
               </div>
-              <div className="my-3 w-[100%]">
+              {/* <div className="my-3 w-[100%]">
                 <div className="flex w-[100%] justify-between items-center">
                   <label className="text-sm" style={{ flex: 0.5 }}>
                     E-mail ID for Browser Access
@@ -81,7 +80,7 @@ function Security(props) {
                     />
                   </div>
                 </div>
-              </div>
+              </div> */}
               <button>Send</button>
             </form>
           </div>
@@ -90,5 +89,4 @@ function Security(props) {
     </Modal>
   );
 }
-
-export default Security;
+export default Configuration;

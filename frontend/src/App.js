@@ -11,8 +11,10 @@ import TallyVult from "./Components/Modal/TallyVult";
 import Navbar from "./Components/Pages/Navbar";
 import Security from "./Components/Modal/Security";
 import Button from "./Components/Modal/Button";
+import Features from "./Components/Modal/Features";
 import Axios from "axios";
 import Data from "./Components/Data";
+import Configuration from "./Components/Modal/Configuration";
 
 function App() {
   const dropdownOptions = [
@@ -24,6 +26,8 @@ function App() {
     { title: "TallyVult", path: "/tallyvult" },
     { title: "Security", path: "/security" },
     { title: "Button", path: "/button" },
+    { title: "Features", path: "/features" },
+    { title: "Configuration", path: "/configuration" },
   ];
 
   // const [data, setData] = useState("");
@@ -61,6 +65,8 @@ function App() {
           <Route path="/tallyvult" element={<TallyVult />} />
           <Route path="/security" element={<Security />} />
           <Route path="/button" element={<Button />} />
+          <Route path="/features" element={<Features />} />
+          <Route path="/configuration" element={<Configuration />} />
         </Routes>
       </BrowserRouter>
       <div>
