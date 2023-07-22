@@ -11,6 +11,7 @@ import TallyExample from "../Modal/TallyVult";
 import ButtonExample from "../Modal/Button";
 import FeaturesExample from "../Modal/Features";
 import ConfigurationExample from "../Modal/Configuration";
+import EwaybillExample from "../Modal/Ewaybill";
 
 import { useState } from "react";
 
@@ -23,6 +24,7 @@ function CollapsibleExample() {
   const [modalButton, setModalButton] = useState(false);
   const [modalFeatures, setModalFeatures] = useState(false);
   const [modalConfiguration, setModalConfiguration] = useState(false);
+  const [modalEwaybill, setModalEwaybill] = useState(false);
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
@@ -48,12 +50,16 @@ function CollapsibleExample() {
         show={modalConfiguration}
         onHide={() => setModalConfiguration(false)}
       />
+      <EwaybillExample
+        show={modalEwaybill}
+        onHide={() => setModalEwaybill(false)}
+      />
 
       <Container>
         <Navbar.Brand href="#">
           <NavDropdown
             style={{ marginRight: "10px" }}
-            className="text-base"
+            className="text-base "
             title="K:Company"
             id="collasible-nav-dropdown"
           >
@@ -89,7 +95,7 @@ function CollapsibleExample() {
             </NavDropdown.Item>
             <NavDropdown.Item
               onClick={() => setModalConfiguration(true)}
-              className="bg-yellow-300"
+              className="bg-yellow-300 rounded-0"
             >
               CONFIGURE
             </NavDropdown.Item>
@@ -142,7 +148,10 @@ function CollapsibleExample() {
               href="#pricing"
             >
               <NavDropdown title="Z:Exchange" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">
+                <NavDropdown.Item
+                  onClick={() => setModalEwaybill(true)}
+                  href="#action/3.1"
+                >
                   E-WAY BILL
                 </NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">
@@ -166,15 +175,17 @@ function CollapsibleExample() {
               title="G:Go To"
               id="collasible-nav-dropdown"
             >
-              <div className="w-[460px] ">
-                <NavDropdown.Item href="#action/3.1">
-                  <div>
-                    <h1 className="text-xs text-center font-bold">
-                      Online Access Configuration
-                    </h1>
-                    <input className="w-[430px] h-[30px] border-2 border-sky-400 bg-yellow-200 mt-2 focus:outline-none focus:outline" />
-                  </div>
-                </NavDropdown.Item>
+              <div id="l-67">
+                <div className="w-[460px] ">
+                  <NavDropdown.Item href="#action/3.1">
+                    <div>
+                      <h1 className="text-xs text-center font-bold">
+                        Online Access Configuration
+                      </h1>
+                      <input className="w-[430px] h-[30px] border-2 border-sky-400 bg-yellow-200 mt-2 focus:outline-none focus:outline" />
+                    </div>
+                  </NavDropdown.Item>
+                </div>
               </div>
               <NavDropdown
                 className="w-[100%] h-[25px] px-3 text-white bg-sky-600"

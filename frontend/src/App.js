@@ -15,6 +15,7 @@ import Features from "./Components/Modal/Features";
 import Axios from "axios";
 import Data from "./Components/Data";
 import Configuration from "./Components/Modal/Configuration";
+import Ewaybill from "./Components/Modal/Ewaybill";
 
 function App() {
   const dropdownOptions = [
@@ -28,6 +29,7 @@ function App() {
     { title: "Button", path: "/button" },
     { title: "Features", path: "/features" },
     { title: "Configuration", path: "/configuration" },
+    { title: "Ewaybill", path: "/ewaybill" },
   ];
 
   // const [data, setData] = useState("");
@@ -67,6 +69,7 @@ function App() {
           <Route path="/button" element={<Button />} />
           <Route path="/features" element={<Features />} />
           <Route path="/configuration" element={<Configuration />} />
+          <Route path="/ewaybill" element={<Ewaybill />} />
         </Routes>
       </BrowserRouter>
       <div>
