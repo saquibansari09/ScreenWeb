@@ -176,8 +176,8 @@ function CollapsibleExample() {
               id="collasible-nav-dropdown"
             >
               <div id="l-67">
-                <div className="w-[460px] ">
-                  <NavDropdown.Item href="#action/3.1">
+                <div className="w-[460px]">
+                  <NavDropdown.Item id="nav-bar" href="#action/3.1">
                     <div>
                       <h1 className="text-xs text-center font-bold">
                         Online Access Configuration

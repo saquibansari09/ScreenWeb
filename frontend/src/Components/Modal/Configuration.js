@@ -17,7 +17,7 @@ function Configuration(props) {
         },
         body: JSON.stringify({
           configuration: configuration,
-          //   email: email,
+          email: email,
         }),
       }).then((res) => console.log(res));
     } catch (err) {

@@ -3,8 +3,8 @@ import Modal from "react-bootstrap/Modal";
 import { BsCurrencyRupee } from "react-icons/bs";
 
 const Alter = (props) => {
-  const [cname, setCName] = useState("");
-  const [mname, setMName] = useState("");
+  const [companyname, setCompany] = useState("");
+  const [mailingname, setMailing] = useState("");
   const [address, setAddress] = useState("");
   const [state, setState] = useState("");
   const [country, setCountry] = useState("");
@@ -19,15 +19,15 @@ const Alter = (props) => {
     e.preventDefault();
 
     try {
-      console.log("-----", cname);
+      console.log("-----", companyname);
       let res = await fetch("http://localhost:5000/storeAlter", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          cname: cname,
-          mname: mname,
+          companyname: companyname,
+          mailingname: mailingname,
           address: address,
           state: state,
           country: country,
@@ -57,7 +57,7 @@ const Alter = (props) => {
       </Modal.Header>
       <Modal.Body className="justify-start">
         <section>
-          <div className="bg-sky-600 h-[40px] ">
+          <div className="bg-sky-600 h-[40px]">
             <h1 className="text-2xl font-bold px-3">Company Alteration </h1>
           </div>
           <div className="flex gap-5">
@@ -71,8 +71,8 @@ const Alter = (props) => {
                     <div style={{ flex: 1 }}>
                       :
                       <input
-                        value={cname}
-                        onChange={(e) => setCName(e.target.value)}
+                        value={companyname}
+                        onChange={(e) => setCompany(e.target.value)}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
                       />
                     </div>
@@ -86,8 +86,8 @@ const Alter = (props) => {
                     <div style={{ flex: 1 }}>
                       :
                       <input
-                        value={mname}
-                        onChange={(e) => setMName(e.target.value)}
+                        value={mailingname}
+                        onChange={(e) => setMailing(e.target.value)}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
                       />
                     </div>
