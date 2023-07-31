@@ -114,8 +114,8 @@ function CollapsibleExample() {
           </NavDropdown>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
+        <Navbar.Collapse id="responsive-navbar-nav" className="justify-between">
+          <Nav className="navbar-one">
             <Nav.Link
               style={{ margin: "0 20px" }}
               className="text-white"
@@ -171,21 +171,19 @@ function CollapsibleExample() {
           <div onClick={() => setModalButton(true)}>
             <NavDropdown
               style={{ margin: "0 35px" }}
-              className="text-white "
+              className="text-white custom "
               title="G:Go To"
               id="collasible-nav-dropdown"
             >
-              <div id="l-67">
-                <div className="w-[460px] ">
-                  <NavDropdown.Item href="#action/3.1">
-                    <div>
-                      <h1 className="text-xs text-center font-bold">
-                        Online Access Configuration
-                      </h1>
-                      <input className="w-[430px] h-[30px] border-2 border-sky-400 bg-yellow-200 mt-2 focus:outline-none focus:outline" />
-                    </div>
-                  </NavDropdown.Item>
-                </div>
+              <div className="w-[460px] custom-1 ">
+                <NavDropdown.Item href="#action/3.1">
+                  <div>
+                    <h1 className="text-xs text-center font-bold">
+                      Online Access Configuration
+                    </h1>
+                    <input className="w-[430px] h-[30px] border-2 border-sky-400 bg-yellow-200 mt-2 focus:outline-none focus:outline" />
+                  </div>
+                </NavDropdown.Item>
               </div>
               <NavDropdown
                 className="w-[100%] h-[25px] px-3 text-white bg-sky-600"
@@ -210,112 +208,121 @@ function CollapsibleExample() {
               </NavDropdown>
             </NavDropdown>
           </div>
-          <Nav.Link
-            style={{ margin: "0 20px" }}
-            className="text-white "
-            href="#pricing"
-          >
-            <NavDropdown title="O:Import" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">
-                COMPANY DATA
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Masters</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">
-                Transactions
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">
-                Bank Details
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">
-                CoNfiguration
-              </NavDropdown.Item>
 
-              {/* <NavDropdown.Divider /> */}
-            </NavDropdown>
-          </Nav.Link>
-          <Nav.Link
-            style={{ margin: "0 20px" }}
-            className="text-white left-6"
-            href="#pricing"
-          >
-            <NavDropdown
-              title="E:Export"
-              id="collasible-nav-dropdown"
-              style={{ color: "skyblue-light" }}
+          <div className="navbar-two flex ">
+            <Nav.Link
+              style={{ margin: "0 20px" }}
+              className="text-white "
+              href="#pricing"
             >
-              <NavDropdown.Item href="#action/3.1">Report</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">CuRrent</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Others</NavDropdown.Item>
-              {/* <NavDropdown.Divider /> */}
-              <NavDropdown.Item href="#action/3.4">
-                COMPANY DATA
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Masters</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">
-                Transactions
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">
-                CoNfiguration
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav.Link>
-          <Nav.Link
-            style={{ margin: "0 20px" }}
-            className="text-white margin-left"
-            href="#pricing"
-          >
-            <NavDropdown title="M:E-mail" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">REPORTS</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">CuRrent</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Others</NavDropdown.Item>
-              {/* <NavDropdown.Divider /> */}
-              <NavDropdown.Item href="#action/3.4">
-                CoNfiguration
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav.Link>
-          <Nav.Link
-            style={{ margin: "0 20px" }}
-            className="text-white left-6"
-            href="#pricing"
-          >
-            <NavDropdown title="P:Print" id="collasible-nav-dropdown">
-              <NavDropdown.Item
-                style={{ backgroundhover: "danger" }}
-                href="#action/3.1"
-              >
-                REPORTS
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">CuRrent</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Others</NavDropdown.Item>
-              {/* <NavDropdown.Divider /> */}
-              <NavDropdown.Item href="#action/3.4">
-                CoNfiguration
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav.Link>
-          <Nav.Link
-            style={{ margin: "0 20px" }}
-            className="text-white "
-            href="#pricing"
-          >
-            <NavDropdown title="F1:Help" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">TallyHelp</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">What's New</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Upgrade</NavDropdown.Item>
-              {/* <NavDropdown.Divider /> */}
-              <NavDropdown.Item href="#action/3.4">TallyShop</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.4">
-                TRoubleshooting
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.4">Settings</NavDropdown.Item>
+              <NavDropdown title="O:Import" id="collasible-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">
+                  COMPANY DATA
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">Masters</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">
+                  Transactions
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">
+                  Bank Details
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">
+                  CoNfiguration
+                </NavDropdown.Item>
 
-              <NavDropdown.Item href="#action/3.4">
-                TDLs & AddOns
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.4">About</NavDropdown.Item>
-            </NavDropdown>
-          </Nav.Link>
+                {/* <NavDropdown.Divider /> */}
+              </NavDropdown>
+            </Nav.Link>
+            <Nav.Link
+              style={{ margin: "0 20px" }}
+              className="text-white left-6"
+              href="#pricing"
+            >
+              <NavDropdown
+                title="E:Export"
+                id="collasible-nav-dropdown"
+                style={{ color: "skyblue-light" }}
+              >
+                <NavDropdown.Item href="#action/3.1">Report</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">CuRrent</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Others</NavDropdown.Item>
+                {/* <NavDropdown.Divider /> */}
+                <NavDropdown.Item href="#action/3.4">
+                  COMPANY DATA
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Masters</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">
+                  Transactions
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">
+                  CoNfiguration
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Nav.Link>
+            <Nav.Link
+              style={{ margin: "0 20px" }}
+              className="text-white margin-left"
+              href="#pricing"
+            >
+              <NavDropdown title="M:E-mail" id="collasible-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">REPORTS</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">CuRrent</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Others</NavDropdown.Item>
+                {/* <NavDropdown.Divider /> */}
+                <NavDropdown.Item href="#action/3.4">
+                  CoNfiguration
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Nav.Link>
+            <Nav.Link
+              style={{ margin: "0 20px" }}
+              className="text-white left-6"
+              href="#pricing"
+            >
+              <NavDropdown title="P:Print" id="collasible-nav-dropdown">
+                <NavDropdown.Item
+                  style={{ backgroundhover: "danger" }}
+                  href="#action/3.1"
+                >
+                  REPORTS
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">CuRrent</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Others</NavDropdown.Item>
+                {/* <NavDropdown.Divider /> */}
+                <NavDropdown.Item href="#action/3.4">
+                  CoNfiguration
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Nav.Link>
+            <Nav.Link
+              style={{ margin: "0 20px" }}
+              className="text-white "
+              href="#pricing"
+            >
+              <NavDropdown title="F1:Help" id="collasible-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">
+                  TallyHelp
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">
+                  What's New
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Upgrade</NavDropdown.Item>
+                {/* <NavDropdown.Divider /> */}
+                <NavDropdown.Item href="#action/3.4">
+                  TallyShop
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.4">
+                  TRoubleshooting
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.4">Settings</NavDropdown.Item>
+
+                <NavDropdown.Item href="#action/3.4">
+                  TDLs & AddOns
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.4">About</NavDropdown.Item>
+              </NavDropdown>
+            </Nav.Link>
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>

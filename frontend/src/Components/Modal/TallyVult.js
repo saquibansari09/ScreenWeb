@@ -58,6 +58,9 @@ function TallyVult(props) {
               <div className="flex gap-12 mt-4 ">
                 <label className="mt-2 text-sm ">Country Name</label>
                 <input
+                  type="text"
+                  required
+                  placeholder="Countryname"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className="bg-gray-200 pl-5  appearance-none border-2 hover:border-sky-400  w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200  focus:border-sky-400"
@@ -66,6 +69,9 @@ function TallyVult(props) {
               <div className="flex gap-20 mt-4 ">
                 <label className="mt-2 text-sm ">Password</label>
                 <input
+                  type="password"
+                  required
+                  placeholder="Enter password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="bg-gray-200 pl-5  appearance-none border-2 hover:border-sky-400  w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200  focus:border-sky-400"

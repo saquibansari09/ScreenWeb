@@ -60,6 +60,8 @@ function Security(props) {
                   <div style={{ flex: 1 }}>
                     :
                     <input
+                      required
+                      placeholder="Control User Access to Company Data"
                       value={security}
                       onChange={(e) => setSecurity(e.target.value)}
                       className="bg-gray-200 pl-5  appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
@@ -75,6 +77,8 @@ function Security(props) {
                   <div style={{ flex: 1 }}>
                     :
                     <input
+                      placeholder="E-mail ID for Browser Access"
+                      required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       className="bg-gray-200 pl-5  appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"

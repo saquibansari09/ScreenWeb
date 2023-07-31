@@ -2,6 +2,7 @@ import React from "react";
 import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
 import { BsCurrencyRupee } from "react-icons/bs";
+import { PostApi } from "../../ApiTemplete.js/Api";
 
 const Alter = (props) => {
   const [companyname, setCName] = useState("");
@@ -16,30 +17,40 @@ const Alter = (props) => {
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState("");
 
+  const resetForm = () => {
+    setWebsite("");
+    setCName("");
+    setMName("");
+    setAddress("");
+    setState("");
+    setCountry("");
+    setPincode("");
+    setTelephone("");
+    setMobile("");
+    setFax("");
+    setEmail("");
+  };
+
   let handleSubmit = async (e) => {
     e.preventDefault();
-
+    const url = "http://localhost:5000/storeAlter/create";
+    const packet = {
+      companyname: companyname,
+      mailingname: mailingname,
+      address: address,
+      state: state,
+      country: country,
+      pincode: pincode,
+      telephone: telephone,
+      mobile: mobile,
+      fax: fax,
+      email: email,
+      website: website,
+    };
     try {
+      PostApi(url, packet);
+      resetForm();
       console.log("-----", companyname);
-      let res = await fetch("http://localhost:5000/storeAlter", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          companyname: companyname,
-          mailingname: mailingname,
-          address: address,
-          state: state,
-          country: country,
-          pincode: pincode,
-          telephone: telephone,
-          mobile: mobile,
-          fax: fax,
-          email: email,
-          website: website,
-        }),
-      }).then((res) => console.log(res));
     } catch (err) {
       console.log(err);
     }
@@ -73,6 +84,9 @@ const Alter = (props) => {
                     <div style={{ flex: 1 }}>
                       :
                       <input
+                        required
+                        placeholder="Enter companyname"
+                        maxLength={20}
                         value={companyname}
                         onChange={(e) => setCName(e.target.value)}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
@@ -88,6 +102,9 @@ const Alter = (props) => {
                     <div style={{ flex: 1 }}>
                       :
                       <input
+                        required
+                        placeholder="Enter valid name"
+                        maxLength={20}
                         value={mailingname}
                         onChange={(e) => setMName(e.target.value)}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
@@ -104,6 +121,9 @@ const Alter = (props) => {
                     <div style={{ flex: 1 }}>
                       :
                       <input
+                        required
+                        maxLength={100}
+                        placeholder="Enter valid address"
                         value={address}
                         onChange={(e) => setAddress(e.target.value)}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
@@ -119,6 +139,9 @@ const Alter = (props) => {
                     <div style={{ flex: 1 }}>
                       :
                       <input
+                        required
+                        placeholder="Enter State"
+                        maxLength={15}
                         value={state}
                         onChange={(e) => setState(e.target.value)}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
@@ -134,6 +157,9 @@ const Alter = (props) => {
                     <div style={{ flex: 1 }}>
                       :
                       <input
+                        placeholder="Enter country"
+                        required
+                        maxLength={20}
                         value={country}
                         onChange={(e) => setCountry(e.target.value)}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
@@ -149,6 +175,10 @@ const Alter = (props) => {
                     <div style={{ flex: 1 }}>
                       :
                       <input
+                        required
+                        minLength={6}
+                        pattern="[0-9]+"
+                        placeholder="Enter pincode"
                         value={pincode}
                         onChange={(e) => setPincode(e.target.value)}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
@@ -164,6 +194,10 @@ const Alter = (props) => {
                     <div style={{ flex: 1 }}>
                       :
                       <input
+                        required
+                        pattern="[0-9]+"
+                        maxLength={14}
+                        placeholder="Enter valid telephone...."
                         value={telephone}
                         onChange={(e) => setTelephone(e.target.value)}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
@@ -179,6 +213,10 @@ const Alter = (props) => {
                     <div style={{ flex: 1 }}>
                       :
                       <input
+                        required
+                        pattern="[0-9]+"
+                        maxLength={12}
+                        placeholder="Enter valid mobile no..."
                         value={mobile}
                         onChange={(e) => setMobile(e.target.value)}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
@@ -194,6 +232,10 @@ const Alter = (props) => {
                     <div style={{ flex: 1 }}>
                       :
                       <input
+                        required
+                        pattern="[0-9]+"
+                        maxLength={10}
+                        placeholder="Enter valid fax...."
                         value={fax}
                         onChange={(e) => setFax(e.target.value)}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
@@ -209,6 +251,9 @@ const Alter = (props) => {
                     <div style={{ flex: 1 }}>
                       :
                       <input
+                        required
+                        type="email"
+                        placeholder="Enter valid email id"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
@@ -224,7 +269,10 @@ const Alter = (props) => {
                     <div style={{ flex: 1 }}>
                       :
                       <input
-                        value={email}
+                        type="url"
+                        required
+                        placeholder="Enter website link.."
+                        value={website}
                         onChange={(e) => setWebsite(e.target.value)}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
                       />

@@ -1,30 +1,24 @@
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
+import { PostApi } from "../../ApiTemplete.js/Api";
 
 const Ewaybill = (props) => {
   const [gst, setGst] = useState("");
-  const [user, setUser] = useState("");
+  const [username, setUser] = useState("");
   const [password, setPassword] = useState("");
 
   let handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      console.log("-----", gst);
-      let res = await fetch("http://localhost:5000/storeAlter", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          gst: gst,
-          user: user,
-          password: password,
-        }),
-      }).then((res) => console.log(res));
-    } catch (err) {
-      console.log(err);
-    }
+    console.log("-----", gst);
+    const url = "http://localhost:5000/storeAlter/create";
+    const packet = {
+      gst: gst,
+      username: username,
+      password: password,
+    };
+    console.log("-----", packet);
+    PostApi(url, packet);
   };
 
   return (
@@ -62,6 +56,9 @@ const Ewaybill = (props) => {
                   <div style={{ flex: 1 }}>
                     :
                     <input
+                      required
+                      placeholder="Enter gst no."
+                      maxLength={10}
                       value={gst}
                       onChange={(e) => setGst(e.target.value)}
                       className="bg-gray-200 pl-5  appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
@@ -72,12 +69,16 @@ const Ewaybill = (props) => {
               <div className="my-3 w-[100%]">
                 <div className="flex w-[100%] justify-between items-center">
                   <label className="text-sm" style={{ flex: 0.5 }}>
-                    Usename
+                    Username
                   </label>
                   <div style={{ flex: 1 }}>
                     :
                     <input
-                      value={user}
+                      type="text"
+                      placeholder="Enter username"
+                      required
+                      maxLength={10}
+                      value={username}
                       onChange={(e) => setUser(e.target.value)}
                       className="bg-gray-200 pl-5  appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
                     />
@@ -92,6 +93,9 @@ const Ewaybill = (props) => {
                   <div style={{ flex: 1 }}>
                     :
                     <input
+                      type="password"
+                      placeholder="Enter valid password"
+                      required
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       className="bg-gray-200 pl-5  appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"

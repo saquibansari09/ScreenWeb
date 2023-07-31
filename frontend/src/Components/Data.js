@@ -10,6 +10,7 @@ const Data = () => {
 
   const data = async () => {
     const res = await axios.get("http://localhost:5000/storeAlter");
+    console.log(res);
     setOpen(res.data);
   };
   useEffect(() => {
@@ -22,7 +23,7 @@ const Data = () => {
     { field: "id", headerName: "ID", width: 90 },
 
     {
-      field: "copanyname",
+      field: "companyname",
       headerName: "Companyname",
       width: 150,
     },
