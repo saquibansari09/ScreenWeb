@@ -2,21 +2,21 @@ import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 
 function TallyVult(props) {
-  const [name, setName] = useState("");
+  const [companyname, setName] = useState("");
   const [password, setPassword] = useState("");
 
   let handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      console.log("-----", name);
+      console.log("-----", companyname);
       let res = await fetch("http://localhost:5000/storeAlter", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name: name,
+          companyname: companyname,
           password: password,
         }),
       }).then((res) => console.log(res));
@@ -61,7 +61,7 @@ function TallyVult(props) {
                   type="text"
                   required
                   placeholder="Countryname"
-                  value={name}
+                  value={companyname}
                   onChange={(e) => setName(e.target.value)}
                   className="bg-gray-200 pl-5  appearance-none border-2 hover:border-sky-400  w-[400px] h-[30px] text-gray-700  focus:outline-none focus:bg-yellow-200  focus:border-sky-400"
                 />

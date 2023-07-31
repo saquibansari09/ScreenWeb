@@ -103,7 +103,9 @@ const Ewaybill = (props) => {
                   </div>
                 </div>
               </div>
-              <button>Send</button>
+              <button className="px-8 py-2 bg-slate-500 hover:bg-slate-400 ">
+                Send
+              </button>
             </form>
           </div>
         </section>
