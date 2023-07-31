@@ -1,29 +1,32 @@
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
+import { PostApi } from "../../ApiTemplete.js/Api";
 
 function TallyVult(props) {
   const [companyname, setName] = useState("");
   const [password, setPassword] = useState("");
 
+  const resetForm = () =>{
+    setName("")
+    setPassword("")
+  }
+
   let handleSubmit = async (e) => {
     e.preventDefault();
 
+    const url = "http://localhost:5000/storeAlter/create";
+    const packet = {
+      companynam: companyname,
+      password: password,
+    };
     try {
-      console.log("-----", companyname);
-      let res = await fetch("http://localhost:5000/storeAlter", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          companyname: companyname,
-          password: password,
-        }),
-      }).then((res) => console.log(res));
+      PostApi(url, packet);
+      resetForm();
+      console.log("-----", );
     } catch (err) {
       console.log(err);
     }
-  };
+    
 
   return (
     <Modal
@@ -84,5 +87,6 @@ function TallyVult(props) {
       </Modal.Body>
     </Modal>
   );
+}
 }
 export default TallyVult;

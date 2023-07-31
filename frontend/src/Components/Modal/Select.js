@@ -50,30 +50,7 @@ const Alter = (props) => {
     resetForm();
     PostApi(url, packet);
 
-    try {
-      console.log("-----", cname);
-      let res = await fetch("http://localhost:5000/storeAlter", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          cname: cname,
-          mname: mname,
-          address: address,
-          state: state,
-          country: country,
-          pincode: pincode,
-          telephone: telephone,
-          mobile: mobile,
-          fax: fax,
-          email: email,
-          website: website,
-        }),
-      }).then((res) => console.log(res));
-    } catch (err) {
-      console.log(err);
-    }
+    
   };
 
   return (

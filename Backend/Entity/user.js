@@ -8,7 +8,7 @@ export const User = new EntitySchema({
       type: "int",
       generated: true,
     },
-    copanyname: {
+    companyname: {
       type: "varchar",
       nullable: true,
     },

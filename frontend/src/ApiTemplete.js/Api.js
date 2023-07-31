@@ -1,4 +1,4 @@
-export const PostApi = (url, packet) => {
+export const PostApi  = (url, packet) => {
   console.log("reached", packet);
   fetch(url, {
     method: "POST",

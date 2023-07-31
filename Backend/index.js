@@ -21,19 +21,19 @@ app.get("/", (req, res) => {
 
 app.listen(5000, () => console.log("app is running"));
 
-app.post("/storeAlter", async function (req, res) {
+app.post("/storeAlter/create", async function (req, res) {
   console.log("store api is called: ------");
   console.log(req.body);
   const user = await UserRepository.save(req?.body);
+  res.send(JSON.stringify({ status: 201, error: null, user }));
+console.log(user)
+})
 
   app.get("/storeAlter", async function (req, res) {
     console.log("store api is called:-----");
     const data = await UserRepository.find();
     res.status(200).json(data);
     console.log(req.body);
-  });
+  })
 
-  //   let data = { name: req.body.cname };
-  //   console.log(data);
-  res.send(JSON.stringify({ status: 201, error: null, user }));
-});
+  

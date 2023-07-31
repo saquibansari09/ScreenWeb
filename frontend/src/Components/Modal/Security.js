@@ -1,29 +1,33 @@
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
+import { PostApi } from "../../ApiTemplete.js/Api";
 
 function Security(props) {
   const [security, setSecurity] = useState("");
   const [email, setEmail] = useState("");
 
+
+  const resetForm = () =>{
+    setSecurity("")
+    setEmail("")
+  }
+
   let handleSubmit = async (e) => {
     e.preventDefault();
-
+    const url = "http://localhost:5000/storeAlter/create";
+    const packet = {
+      security: security,
+      email: email,
+    };
     try {
-      console.log("-----", security);
-      let res = await fetch("http://localhost:5000/storeAlter", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          security: security,
-          email: email,
-        }),
-      }).then((res) => console.log(res));
+      PostApi(url, packet);
+      resetForm();
+      console.log("-----", );
     } catch (err) {
       console.log(err);
     }
-  };
+    
+  }
 
   return (
     <Modal
