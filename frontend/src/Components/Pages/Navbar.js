@@ -1,4 +1,4 @@
-import Container from "react-bootstrap/Container";
+import Containerfluid from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
@@ -55,7 +55,7 @@ function CollapsibleExample() {
         onHide={() => setModalEwaybill(false)}
       />
 
-      <Container>
+      <Containerfluid>
         <Navbar.Brand href="#">
           <NavDropdown
             style={{ marginRight: "10px" }}
@@ -324,7 +324,7 @@ function CollapsibleExample() {
             </Nav.Link>
           </div>
         </Navbar.Collapse>
-      </Container>
+      </Containerfluid>
     </Navbar>
   );
 }

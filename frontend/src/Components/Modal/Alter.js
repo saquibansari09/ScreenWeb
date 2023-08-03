@@ -56,6 +56,101 @@ const Alter = (props) => {
     }
   };
 
+  const validateForm = (data) => {
+    const errors = {};
+
+    if (!data.companyname) {
+      errors.username = "companyname is required.";
+    }
+
+    if (!data.mailingname) {
+      errors.mailingname = "Email is required.";
+    } else if (!isValidEmail(data.mailingname)) {
+      errors.mailingname = "Invalid email format.";
+    }
+
+    if (!data.address) {
+      errors.address = "Address is required.";
+    }
+
+    if (!data.state) {
+      errors.state = "State is required.";
+    }
+
+    if (!data.country) {
+      errors.country = "Country is required.";
+    }
+
+    if (!data.pincode) {
+      errors.pincode = "Pincode is required.";
+    }
+
+    if (!data.password) {
+      errors.password = "Password is required.";
+    } else if (data.password.length < 6) {
+      errors.password = "Password should be at least 6 characters long.";
+    }
+
+    return errors;
+  };
+
+  const [formData, setFormData] = useState({
+    companyname: "",
+    mailingname: "",
+    address: "",
+    country: "",
+  });
+
+  const [errors, setErrors] = useState({});
+
+  const isValidEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+
+    const fieldErrors = validateField(name, value);
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [name]: fieldErrors[name],
+    }));
+  };
+
+  const validateField = (fieldName, value) => {
+    const fieldErrors = {};
+    switch (fieldName) {
+      case "username":
+        if (!value) {
+          fieldErrors[fieldName] = "Username is required.";
+        }
+        break;
+      case "email":
+        if (!value) {
+          fieldErrors[fieldName] = "Email is required.";
+        } else if (!isValidEmail(value)) {
+          fieldErrors[fieldName] = "Invalid email format.";
+        }
+        break;
+      case "password":
+        if (!value) {
+          fieldErrors[fieldName] = "Password is required.";
+        } else if (value.length < 6) {
+          fieldErrors[fieldName] =
+            "Password should be at least 6 characters long.";
+        }
+        break;
+      default:
+        break;
+    }
+    return fieldErrors;
+  };
+
   return (
     <Modal
       className="mt-11 pb-44"
@@ -78,35 +173,50 @@ const Alter = (props) => {
               <form onSubmit={handleSubmit}>
                 <div className="my-4 w-[100%]">
                   <div className="flex w-[100%] justify-between items-center">
-                    <label className="text-sm" style={{ flex: 0.5 }}>
+                    <label
+                      htmlFor="companyname"
+                      className="text-sm"
+                      style={{ flex: 0.5 }}
+                    >
                       Company Name
                     </label>
                     <div style={{ flex: 1 }}>
                       :
                       <input
+                        type="text"
+                        name="companyname"
+                        id="companyname"
                         required
                         placeholder="Enter companyname"
                         maxLength={20}
-                        value={companyname}
-                        onChange={(e) => setCName(e.target.value)}
+                        value={formData.username}
+                        onChange={handleChange}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
                       />
+                      {errors.companyname && <span>{errors.companyname}</span>}
                     </div>
                   </div>
                 </div>
                 <div className="my-4 w-[100%]">
                   <div className="flex w-[100%] justify-between items-center">
-                    <label className="text-sm" style={{ flex: 0.5 }}>
+                    <label
+                      htmlFor="mailingname"
+                      className="text-sm"
+                      style={{ flex: 0.5 }}
+                    >
                       Mailing Name
                     </label>
                     <div style={{ flex: 1 }}>
                       :
                       <input
+                        type="email"
+                        name="email"
+                        id="email"
                         required
                         placeholder="Enter valid name"
                         maxLength={20}
-                        value={mailingname}
-                        onChange={(e) => setMName(e.target.value)}
+                        value={formData.mailingname}
+                        onChange={handleChange}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
                       />
                     </div>
@@ -121,6 +231,8 @@ const Alter = (props) => {
                     <div style={{ flex: 1 }}>
                       :
                       <input
+                        type="text"
+                        name="address"
                         required
                         maxLength={100}
                         placeholder="Enter valid address"
@@ -139,6 +251,8 @@ const Alter = (props) => {
                     <div style={{ flex: 1 }}>
                       :
                       <input
+                        type="text"
+                        name="state"
                         required
                         placeholder="Enter State"
                         maxLength={15}
@@ -157,6 +271,8 @@ const Alter = (props) => {
                     <div style={{ flex: 1 }}>
                       :
                       <input
+                        type="text"
+                        name="country"
                         placeholder="Enter country"
                         required
                         maxLength={20}
@@ -175,8 +291,10 @@ const Alter = (props) => {
                     <div style={{ flex: 1 }}>
                       :
                       <input
+                        type="text"
+                        name="pincode"
                         required
-                        minLength={6}
+                        maxLength={6}
                         pattern="[0-9]+"
                         placeholder="Enter pincode"
                         value={pincode}
@@ -194,9 +312,11 @@ const Alter = (props) => {
                     <div style={{ flex: 1 }}>
                       :
                       <input
+                        type="tel"
+                        name="telephone"
+                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                         required
-                        pattern="[0-9]+"
-                        maxLength={14}
+                        maxLength={12}
                         placeholder="Enter valid telephone...."
                         value={telephone}
                         onChange={(e) => setTelephone(e.target.value)}
@@ -213,6 +333,8 @@ const Alter = (props) => {
                     <div style={{ flex: 1 }}>
                       :
                       <input
+                        type="text"
+                        name="mobile"
                         required
                         pattern="[0-9]+"
                         maxLength={12}
@@ -232,6 +354,8 @@ const Alter = (props) => {
                     <div style={{ flex: 1 }}>
                       :
                       <input
+                        type="text"
+                        name="fax"
                         required
                         pattern="[0-9]+"
                         maxLength={10}
@@ -253,9 +377,10 @@ const Alter = (props) => {
                       <input
                         required
                         type="email"
+                        name="email"
                         placeholder="Enter valid email id"
                         value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        onChange={handleChange}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
                       />
                     </div>
@@ -263,13 +388,19 @@ const Alter = (props) => {
                 </div>
                 <div className="my-4 w-[100%]">
                   <div className="flex w-[100%] justify-between items-center">
-                    <label className="text-sm" style={{ flex: 0.5 }}>
+                    <label
+                      htmlFor="website"
+                      className="text-sm"
+                      style={{ flex: 0.5 }}
+                    >
                       Website
                     </label>
                     <div style={{ flex: 1 }}>
                       :
                       <input
                         type="url"
+                        name="website"
+                        id="website"
                         required
                         placeholder="Enter website link.."
                         value={website}

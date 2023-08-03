@@ -46,17 +46,9 @@
   background-color: gold !important;
 }
 
-/* #l-67 {
-  background-color: #fff !important;
-} */
-
 #nav-bar:hover {
   background-color: #fff !important;
 }
-
-/* .dropdown-menu.show {
-  left: -200px !important;
-} */
 
 .nav-link {
   text-align: center;
@@ -89,4 +81,10 @@
   .navbar-nav {
     --bs-nav-link-padding-y: auto !important;
   }
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: var(--bs-navbar-nav-link-padding-x);
+  padding-left: var(--bs-navbar-nav-link-padding-x);
+  color: white;
 }

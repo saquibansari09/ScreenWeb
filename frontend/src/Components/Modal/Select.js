@@ -4,8 +4,8 @@ import { BsCurrencyRupee } from "react-icons/bs";
 import { PostApi } from "../../ApiTemplete.js/Api";
 
 const Alter = (props) => {
-  const [cname, setCName] = useState("");
-  const [mname, setMName] = useState("");
+  const [companyname, setCompany] = useState("");
+  const [mailingname, setMailing] = useState("");
   const [address, setAddress] = useState("");
   const [state, setState] = useState("");
   const [country, setCountry] = useState("");
@@ -17,8 +17,8 @@ const Alter = (props) => {
   const [website, setWebsite] = useState("");
 
   const resetForm = () => {
-    setCName("");
-    setMName("");
+    setCompany("");
+    setMailing("");
     setAddress("");
     setState("");
     setCountry("");
@@ -34,8 +34,8 @@ const Alter = (props) => {
     e.preventDefault();
     const url = "http://localhost:5000/storeAlter/create";
     const packet = {
-      cname: cname,
-      mname: mname,
+      companyname: companyname,
+      mailingname: mailingname,
       address: address,
       state: state,
       country: country,
@@ -49,8 +49,6 @@ const Alter = (props) => {
     console.log("-----", packet);
     resetForm();
     PostApi(url, packet);
-
-    
   };
 
   return (
@@ -80,8 +78,10 @@ const Alter = (props) => {
                     <div style={{ flex: 1 }}>
                       :
                       <input
-                        value={cname}
-                        onChange={(e) => setCName(e.target.value)}
+                        placeholder="Enter company name"
+                        required
+                        value={companyname}
+                        onChange={(e) => setCompany(e.target.value)}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
                       />
                     </div>
@@ -98,8 +98,8 @@ const Alter = (props) => {
                         required
                         placeholder="Enter valid name"
                         maxLength={20}
-                        value={mname}
-                        onChange={(e) => setMName(e.target.value)}
+                        value={mailingname}
+                        onChange={(e) => setMailing(e.target.value)}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
                       />
                     </div>
