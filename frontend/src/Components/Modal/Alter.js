@@ -17,6 +17,8 @@ const Alter = (props) => {
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState("");
 
+  const [errors, setErrors] = useState({});
+
   const resetForm = () => {
     setWebsite("");
     setCName("");
@@ -101,8 +103,6 @@ const Alter = (props) => {
     country: "",
   });
 
-  const [errors, setErrors] = useState({});
-
   const isValidEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -151,6 +151,22 @@ const Alter = (props) => {
     return fieldErrors;
   };
 
+  const onBlurHandler = (e) => {
+    const { value, name } = e.target;
+
+    if (!value?.trim()) {
+      setErrors((prev) => ({ ...prev, [name]: "Invalid " + name + " name" }));
+      return;
+    }
+
+    if (name === "email") {
+      if (!isValidEmail(value)) {
+        setErrors((prev) => ({ ...prev, [name]: "Invalid email!" }));
+        return;
+      }
+    }
+  };
+
   return (
     <Modal
       className="mt-11 pb-44"
@@ -189,11 +205,16 @@ const Alter = (props) => {
                         required
                         placeholder="Enter companyname"
                         maxLength={20}
-                        value={formData.username}
+                        value={formData.companyname}
                         onChange={handleChange}
+                        onBlur={onBlurHandler}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
                       />
-                      {errors.companyname && <span>{errors.companyname}</span>}
+                      {errors.companyname && (
+                        <span className="text-xs text-red-500">
+                          {errors.companyname}
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -210,22 +231,32 @@ const Alter = (props) => {
                       :
                       <input
                         type="email"
-                        name="email"
-                        id="email"
+                        name="mailingname"
+                        id="mailingname"
                         required
                         placeholder="Enter valid name"
                         maxLength={20}
                         value={formData.mailingname}
                         onChange={handleChange}
+                        onBlur={onBlurHandler}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
                       />
+                      {errors.mailingname && (
+                        <span className="text-xs text-red-500">
+                          {errors.mailingname}
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
 
                 <div className="my-4 w-[100%]">
                   <div className="flex w-[100%] justify-between items-center">
-                    <label className="text-sm" style={{ flex: 0.5 }}>
+                    <label
+                      htmlFor="address"
+                      className="text-sm"
+                      style={{ flex: 0.5 }}
+                    >
                       Address
                     </label>
                     <div style={{ flex: 1 }}>
@@ -233,19 +264,30 @@ const Alter = (props) => {
                       <input
                         type="text"
                         name="address"
+                        id="address"
                         required
                         maxLength={100}
                         placeholder="Enter valid address"
-                        value={address}
-                        onChange={(e) => setAddress(e.target.value)}
+                        value={formData.address}
+                        onChange={handleChange}
+                        onBlur={onBlurHandler}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
                       />
+                      {errors.address && (
+                        <span className="text-xs text-red-500">
+                          {errors.address}
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
                 <div className="my-4 w-[100%]">
                   <div className="flex w-[100%] justify-between items-center">
-                    <label className="text-sm" style={{ flex: 0.5 }}>
+                    <label
+                      htmlFor="state"
+                      className="text-sm"
+                      style={{ flex: 0.5 }}
+                    >
                       State
                     </label>
                     <div style={{ flex: 1 }}>
@@ -253,19 +295,30 @@ const Alter = (props) => {
                       <input
                         type="text"
                         name="state"
+                        id="state"
                         required
                         placeholder="Enter State"
                         maxLength={15}
-                        value={state}
-                        onChange={(e) => setState(e.target.value)}
+                        value={formData.state}
+                        onChange={handleChange}
+                        onBlur={onBlurHandler}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
                       />
+                      {errors.state && (
+                        <span className="text-xs text-red-500">
+                          {errors.state}
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
                 <div className="my-4 w-[100%]">
                   <div className="flex w-[100%] justify-between items-center">
-                    <label className="text-sm" style={{ flex: 0.5 }}>
+                    <label
+                      htmlFor="country"
+                      className="text-sm"
+                      style={{ flex: 0.5 }}
+                    >
                       Country
                     </label>
                     <div style={{ flex: 1 }}>
@@ -273,19 +326,30 @@ const Alter = (props) => {
                       <input
                         type="text"
                         name="country"
+                        id="country"
                         placeholder="Enter country"
                         required
                         maxLength={20}
-                        value={country}
-                        onChange={(e) => setCountry(e.target.value)}
+                        value={formData.country}
+                        onChange={handleChange}
+                        onBlur={onBlurHandler}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
                       />
+                      {errors.country && (
+                        <span className="text-xs text-red-500">
+                          {errors.country}
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
                 <div className="my-4 w-[100%]">
                   <div className="flex w-[100%] justify-between items-center">
-                    <label className="text-sm" style={{ flex: 0.5 }}>
+                    <label
+                      htmlFor="pincode"
+                      className="text-sm"
+                      style={{ flex: 0.5 }}
+                    >
                       Pincode
                     </label>
                     <div style={{ flex: 1 }}>
@@ -293,83 +357,127 @@ const Alter = (props) => {
                       <input
                         type="text"
                         name="pincode"
+                        id="pincode"
                         required
                         maxLength={6}
                         pattern="[0-9]+"
                         placeholder="Enter pincode"
-                        value={pincode}
-                        onChange={(e) => setPincode(e.target.value)}
+                        value={formData.pincode}
+                        onChange={handleChange}
+                        onBlur={onBlurHandler}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
                       />
+                      {errors.pincode && (
+                        <span className="text-xs text-red-500">
+                          {errors.pincode}
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
                 <div className="my-4 w-[100%]">
                   <div className="flex w-[100%] justify-between items-center">
-                    <label className="text-sm" style={{ flex: 0.5 }}>
+                    <label
+                      htmlFor="telephone"
+                      className="text-sm"
+                      style={{ flex: 0.5 }}
+                    >
                       Telephone
                     </label>
                     <div style={{ flex: 1 }}>
                       :
                       <input
+                        id="telephone"
                         type="tel"
                         name="telephone"
                         pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                         required
                         maxLength={12}
                         placeholder="Enter valid telephone...."
-                        value={telephone}
-                        onChange={(e) => setTelephone(e.target.value)}
+                        value={formData.telephone}
+                        onChange={handleChange}
+                        onBlur={onBlurHandler}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
                       />
+                      {errors.telephone && (
+                        <span className="text-xs text-red-500">
+                          {errors.telephone}
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
                 <div className="my-4 w-[100%]">
                   <div className="flex w-[100%] justify-between items-center">
-                    <label className="text-sm" style={{ flex: 0.5 }}>
+                    <label
+                      htmlFor="mobile"
+                      className="text-sm"
+                      style={{ flex: 0.5 }}
+                    >
                       Mobile
                     </label>
                     <div style={{ flex: 1 }}>
                       :
                       <input
+                        id="mobile"
                         type="text"
                         name="mobile"
                         required
                         pattern="[0-9]+"
                         maxLength={12}
                         placeholder="Enter valid mobile no..."
-                        value={mobile}
-                        onChange={(e) => setMobile(e.target.value)}
+                        value={formData.mobile}
+                        onChange={handleChange}
+                        onBlur={onBlurHandler}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
                       />
+                      {errors.mobile && (
+                        <span className="text-xs text-red-500">
+                          {errors.mobile}
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
                 <div className="my-4 w-[100%]">
                   <div className="flex w-[100%] justify-between items-center">
-                    <label className="text-sm" style={{ flex: 0.5 }}>
+                    <label
+                      htmlFor="fax"
+                      className="text-sm"
+                      style={{ flex: 0.5 }}
+                    >
                       Fax
                     </label>
                     <div style={{ flex: 1 }}>
                       :
                       <input
                         type="text"
+                        id="fax"
                         name="fax"
                         required
                         pattern="[0-9]+"
                         maxLength={10}
                         placeholder="Enter valid fax...."
-                        value={fax}
-                        onChange={(e) => setFax(e.target.value)}
+                        value={formData.fax}
+                        onChange={handleChange}
+                        onBlur={onBlurHandler}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
                       />
+                      {errors.fax && (
+                        <span className="text-xs text-red-500">
+                          {errors.fax}
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
                 <div className="my-4 w-[100%]">
                   <div className="flex w-[100%] justify-between items-center">
-                    <label className="text-sm" style={{ flex: 0.5 }}>
+                    <label
+                      htmlFor="email"
+                      className="text-sm"
+                      style={{ flex: 0.5 }}
+                    >
                       Email
                     </label>
                     <div style={{ flex: 1 }}>
@@ -379,10 +487,16 @@ const Alter = (props) => {
                         type="email"
                         name="email"
                         placeholder="Enter valid email id"
-                        value={email}
+                        value={formData.email}
                         onChange={handleChange}
+                        onBlur={onBlurHandler}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
                       />
+                      {errors.email && (
+                        <span className="text-xs text-red-500">
+                          {errors.email}
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -403,10 +517,16 @@ const Alter = (props) => {
                         id="website"
                         required
                         placeholder="Enter website link.."
-                        value={website}
-                        onChange={(e) => setWebsite(e.target.value)}
+                        value={formData.website}
+                        onChange={handleChange}
+                        onBlur={onBlurHandler}
                         className="bg-gray-200 pl-5 appearance-none border-2 h-[30px] w-[95%] text-gray-700  focus:outline-none focus:bg-yellow-200 focus:border-sky-400"
                       />
+                      {errors.website && (
+                        <span className="text-xs text-red-500">
+                          {errors.website}
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
