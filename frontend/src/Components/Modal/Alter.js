@@ -20,34 +20,33 @@ const Alter = (props) => {
   const [errors, setErrors] = useState({});
 
   const resetForm = () => {
-    setWebsite("");
-    setCName("");
-    setMName("");
-    setAddress("");
-    setState("");
-    setCountry("");
-    setPincode("");
-    setTelephone("");
-    setMobile("");
-    setFax("");
-    setEmail("");
+    setFormData({
+      companyname: "",
+      mailingname: "",
+      address: "",
+      state: "",
+      country: "",
+      pincode: "",
+      telephone: "",
+      mobile: "",
+      fax: "",
+      email: "",
+      website: "",
+    });
   };
+  const [formData, setFormData] = useState({
+    companyname: "",
+    mailingname: "",
+    address: "",
+    country: "",
+  });
 
   let handleSubmit = async (e) => {
     e.preventDefault();
     const url = "http://localhost:5000/storeAlter/create";
+    console.log(formData);
     const packet = {
-      companyname: companyname,
-      mailingname: mailingname,
-      address: address,
-      state: state,
-      country: country,
-      pincode: pincode,
-      telephone: telephone,
-      mobile: mobile,
-      fax: fax,
-      email: email,
-      website: website,
+      ...formData,
     };
     try {
       PostApi(url, packet);
@@ -95,13 +94,6 @@ const Alter = (props) => {
 
     return errors;
   };
-
-  const [formData, setFormData] = useState({
-    companyname: "",
-    mailingname: "",
-    address: "",
-    country: "",
-  });
 
   const isValidEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -390,7 +382,7 @@ const Alter = (props) => {
                         id="telephone"
                         type="tel"
                         name="telephone"
-                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                        // pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                         required
                         maxLength={12}
                         placeholder="Enter valid telephone...."
