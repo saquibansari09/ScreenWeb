@@ -31,7 +31,7 @@ const Ewaybill = (props) => {
     >
       <Modal.Header closeButton></Modal.Header>
       <Modal.Body>
-        <section>
+        <section className="pb-3">
           <div className="flex justify-between px-2 w-[100%] h-[30px] bg-sky-400">
             <h1 className="text-base">Features</h1>
             <h1 className="text-base">Viser Solution Private Limited</h1>

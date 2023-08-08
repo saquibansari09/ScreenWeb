@@ -3,19 +3,20 @@ import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
 import { BsCurrencyRupee } from "react-icons/bs";
 import { PostApi } from "../../ApiTemplete.js/Api";
+// import { useFormik } from "formik";
 
 const Alter = (props) => {
-  const [companyname, setCName] = useState("");
-  const [mailingname, setMName] = useState("");
-  const [address, setAddress] = useState("");
-  const [state, setState] = useState("");
-  const [country, setCountry] = useState("");
-  const [pincode, setPincode] = useState("");
-  const [telephone, setTelephone] = useState("");
-  const [mobile, setMobile] = useState("");
-  const [fax, setFax] = useState("");
-  const [email, setEmail] = useState("");
-  const [website, setWebsite] = useState("");
+  // const [companyname, setCName] = useState("");
+  // const [mailingname, setMName] = useState("");
+  // const [address, setAddress] = useState("");
+  // const [state, setState] = useState("");
+  // const [country, setCountry] = useState("");
+  // const [pincode, setPincode] = useState("");
+  // const [telephone, setTelephone] = useState("");
+  // const [mobile, setMobile] = useState("");
+  // const [fax, setFax] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [website, setWebsite] = useState("");
 
   const [errors, setErrors] = useState({});
 
@@ -39,6 +40,12 @@ const Alter = (props) => {
     mailingname: "",
     address: "",
     country: "",
+    pincode: "",
+    telephone: "",
+    mobile: "",
+    fax: "",
+    email: "",
+    website: "",
   });
 
   let handleSubmit = async (e) => {
@@ -51,7 +58,7 @@ const Alter = (props) => {
     try {
       PostApi(url, packet);
       resetForm();
-      console.log("-----", companyname);
+      console.log("-----");
     } catch (err) {
       console.log(err);
     }
