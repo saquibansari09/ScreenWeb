@@ -12,6 +12,7 @@ import ButtonExample from "../Modal/Button";
 import FeaturesExample from "../Modal/Features";
 import ConfigurationExample from "../Modal/Configuration";
 import EwaybillExample from "../Modal/Ewaybill";
+import DetailExample from "../Modal/Detail";
 
 import { useState } from "react";
 
@@ -25,6 +26,7 @@ function CollapsibleExample() {
   const [modalFeatures, setModalFeatures] = useState(false);
   const [modalConfiguration, setModalConfiguration] = useState(false);
   const [modalEwaybill, setModalEwaybill] = useState(false);
+  const [modalDetail, setModalDetail] = useState(false);
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
@@ -54,6 +56,7 @@ function CollapsibleExample() {
         show={modalEwaybill}
         onHide={() => setModalEwaybill(false)}
       />
+      <DetailExample show={modalDetail} onHide={() => setModalDetail(false)} />
 
       <Containerfluid>
         <Navbar.Brand href="#">
@@ -90,7 +93,7 @@ function CollapsibleExample() {
             <NavDropdown.Item href="#action/3.4">
               ReMote Access
             </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.4">
+            <NavDropdown.Item onClick={() => setModalDetail(true)}>
               Browser Access
             </NavDropdown.Item>
             <NavDropdown.Item
